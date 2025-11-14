@@ -124,8 +124,8 @@
           <div class="card h-100">
             <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BAC PRO SN">
             <div class="card-body">
-              <h5 class="card-title">BAC PRO SN</h5>
-              <p class="card-text">Lycée Christophe Colomb.</p>
+              <h5 class="card-title">GERIP COMPETENCE</h5>
+              <p class="card-text">.</p>
               <a href="Formation/bacprosn.html" class="btn btn-primary">En savoir plus</a>
             </div>
           </div>
@@ -135,8 +135,52 @@
           <div class="card h-100">
             <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
             <div class="card-body">
-              <h5 class="card-title">BTS SIO</h5>
-              <p class="card-text">Lycée.</p>
+              <h5 class="card-title">CISCO</h5>
+              <p class="card-text">.</p>
+              <a href="/Formation/bts_sio.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
+            <div class="card-body">
+              <h5 class="card-title">SECNUM</h5>
+              <p class="card-text">.</p>
+              <a href="/Formation/bts_sio.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
+            <div class="card-body">
+              <h5 class="card-title">CNIL</h5>
+              <p class="card-text">.</p>
+              <a href="/Formation/bts_sio.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
+            <div class="card-body">
+              <h5 class="card-title">EBIOS</h5>
+              <p class="card-text">.</p>
+              <a href="/Formation/bts_sio.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
+            <div class="card-body">
+              <h5 class="card-title">OSINT</h5>
+              <p class="card-text">.</p>
               <a href="/Formation/bts_sio.html" class="btn btn-primary">En savoir plus</a>
             </div>
           </div>
@@ -203,61 +247,5 @@
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-
-    <!-- Script personnalisé (facultatif) -->
-    <script src="script.js"></script>
-
-    <!-- Animation "decoder" pour le titre -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const textElement = document.getElementById('thankYouText');
-        if (!textElement) return; // sécurité
-
-        const originalText = "PORTE FOLIO";
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_-+=[]{}|;:,.<>?';
-
-        // vider le noeud puis insérer des spans
-        textElement.textContent = '';
-        originalText.split('').forEach(char => {
-          const span = document.createElement('span');
-          span.innerHTML = char === ' ' ? '&nbsp;' : char;
-          textElement.appendChild(span);
-        });
-
-        const letters = Array.from(textElement.children);
-
-        function createDecoderAnimation() {
-          const tl = gsap.timeline({
-            onComplete: () => {
-              gsap.delayedCall(1, () => tl.restart());
-            }
-          });
-
-          letters.forEach((letter, i) => {
-            const originalChar = letter.innerHTML;
-            if (originalChar === '&nbsp;') return;
-
-            let proxy = { charIndex: 0 };
-
-            tl.to(proxy, {
-              charIndex: chars.length - 1,
-              duration: 1.5,
-              ease: "power2.inOut",
-              onUpdate: () => {
-                const randomIndex = Math.floor(Math.random() * chars.length);
-                letter.textContent = chars[randomIndex];
-              },
-              onComplete: () => {
-                letter.textContent = originalChar;
-              }
-            }, i * 0.08);
-          });
-
-          tl.to({}, { duration: 2 });
-        }
-
-        createDecoderAnimation();
-      });
-    </script>
   </body>
 </html>

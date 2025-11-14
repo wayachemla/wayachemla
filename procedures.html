@@ -31,9 +31,11 @@
       <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">Waya CHEMLA</a>
+
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
@@ -45,7 +47,7 @@
                   Navigation
                 </a>
 
-               <ul class="dropdown-menu">
+                <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="profil.html">profil</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="formations.html">formation</a></li>
@@ -75,7 +77,6 @@
         </div>
       </nav>
     </section>
-
 
     <div class="bg-dark white-bg d-flex justify-content-center align-items-center vh-10 px-2">
       <div class="border shadow-sm p-4">
@@ -138,59 +139,78 @@
         </div>
       </div>
 
-      <div class="text-center py-3">
+      <div class="footer-copyright text-center py-3">
         © 2025 Copyright:
         <a href="#" class="text-white"> Site web de Waya CHEMLA</a>
       </div>
     </footer>
 
     <style>
-      .carousel-item {
-        height: 80vh;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-
-      .carousel-caption {
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 2rem;
-        border-radius: 10px;
-      }
-
-      body {
-        background-color: #0ad611;
-      }
-
-      #linkedin,
-      #github {
-        width: 42px;
-        height: 42px;
-      }
-
-      .text-container {
-        text-align: center;
-      }
-
+      .carousel-item { height: 80vh; background-position: center; background-size: cover; background-repeat: no-repeat; }
+      .carousel-caption { background-color: rgba(0, 0, 0, 0.9); padding: 2rem; border-radius: 10px; }
+      body { background-color: #0ad611; }
+      #linkedin, #github { width: 42px; height: 42px; }
+      .text-container { text-align: center; }
       #thank-you-text {
-        top: 1000px;
-        font-weight: 400px;
-        font-size: clamp(2.5rem, 10vw, 8rem);
-        position: relative;
-        color: #11f756;
+        top: 1000px; font-weight: 400px; font-size: clamp(2.5rem, 10vw, 8rem);
+        position: relative; color: #11f756;
         text-shadow: 0 0 5px #090b0a, 0 0 15px #050706, 0 0 30px #00ff99;
-        cursor: default;
-        text-transform: uppercase;
-        white-space: nowrap;
+        cursor: default; text-transform: uppercase; white-space: nowrap;
       }
-
-      .thank-you-text span {
-        display: inline-block;
-        position: relative;
-        min-width: 0.5ch;
-        will-change: contents;
-      }
+      .thank-you-text span { display: inline-block; position: relative; min-width: 0.5ch; will-change: contents; }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const textElement = document.getElementById('thankYouText');
+        const originalText = "PORTE FOLIO";
+
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_-+=[]{}|;:,.<>?';
+
+        originalText.split('').forEach(char => {
+          const span = document.createElement('span');
+          span.innerHTML = char === ' ' ? '&nbsp;' : char;
+          textElement.appendChild(span);
+        });
+
+        const letters = Array.from(textElement.children);
+
+        function createDecoderAnimation() {
+          const tl = gsap.timeline({
+            onComplete: () => {
+              gsap.delayedCall(1, () => tl.restart());
+            }
+          });
+
+          letters.forEach((letter, i) => {
+            const originalChar = letter.innerHTML;
+            if (originalChar === '&nbsp;') return;
+
+            let proxy = { charIndex: 0 };
+
+            tl.to(proxy, {
+              charIndex: chars.length - 1,
+              duration: 1.5,
+              ease: "power2.inOut",
+              onUpdate: () => {
+                const randomIndex = Math.floor(Math.random() * chars.length);
+                letter.textContent = chars[randomIndex];
+              },
+              onComplete: () => {
+                letter.textContent = originalChar;
+              }
+            }, i * 0.1);
+          });
+
+          tl.to({}, { duration: 2 });
+        }
+
+        createDecoderAnimation();
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
 </html>
