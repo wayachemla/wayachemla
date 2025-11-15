@@ -11,60 +11,9 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
+
+
     <!-- Styles spécifiques -->
-    <style>
-      /* Retiré le body { background-color: #0ad611 } conflictuant avec bg-dark */
-      /* Ajustements et corrections CSS */
-      .carousel-item {
-        height: 80vh;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-
-      .carousel-caption {
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 2rem;
-        border-radius: 10px;
-      }
-
-      #linkedin,
-      #github {
-        width: 42px;
-        height: 42px;
-      }
-
-      .text-container {
-        text-align: center;
-      }
-
-      /* Remplacement de font-weight: 400px (incorrect) par font-weight: 400 */
-      #thank-you-text {
-        top: 1000px;
-        font-weight: 400;
-        font-size: clamp(2.5rem, 10vw, 8rem);
-        position: relative;
-        color: #11f756;
-        text-shadow: 0 0 5px #090b0a, 0 0 15px #050706, 0 0 30px #00ff99;
-        cursor: default;
-        text-transform: uppercase;
-        white-space: nowrap;
-      }
-
-      .thank-you-text span {
-        display: inline-block;
-        position: relative;
-        min-width: 0.5ch;
-        will-change: contents;
-      }
-
-      /* Petit ajustement pour le footer */
-      footer .social-links a {
-        margin-right: 10px;
-        color: inherit;
-        text-decoration: none;
-      }
-    </style>
   </head>
 
   <body class="p-3 mb-2 bg-dark text-white">
@@ -114,19 +63,24 @@
     <header class="container py-4 text-center">
       <!-- ID utilisé dans le JS : 'thankYouText' -->
       <h1 id="thankYouText" class="mb-4">PORTE FOLIO</h1>
-      <h2 class="text-center mb-5">Certifications</h2>
+      <h2 class="text-center mb-5">DEV</h2>
     </header>
 
     <!-- CONTENU -->
+     
+    
     <main class="container py-2">
+
+      
+      
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <div class="col">
           <div class="card h-100">
             <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BAC PRO SN">
             <div class="card-body">
-              <h5 class="card-title">BAC PRO SN</h5>
-              <p class="card-text">Lycée Christophe Colomb.</p>
-              <a href="Formation/bacprosn.html" class="btn btn-primary">En savoir plus</a>
+              <h5 class="card-title">Python</h5>
+              <p class="card-text">.</p>
+              <a href="/competence/dev/python.html" class="btn btn-primary">En savoir plus</a>
             </div>
           </div>
         </div>
@@ -135,8 +89,52 @@
           <div class="card h-100">
             <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
             <div class="card-body">
-              <h5 class="card-title">BTS SIO</h5>
-              <p class="card-text">Lycée.</p>
+              <h5 class="card-title">HTML/CSS</h5>
+              <p class="card-text">.</p>
+              <a href="/competence/dev/html.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
+            <div class="card-body">
+              <h5 class="card-title">Javascript</h5>
+              <p class="card-text">.</p>
+              <a href="/competence/dev/javascript.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
+            <div class="card-body">
+              <h5 class="card-title">PHP</h5>
+              <p class="card-text">.</p>
+              <a href="/competence/dev/php.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
+            <div class="card-body">
+              <h5 class="card-title">EBIOS</h5>
+              <p class="card-text">.</p>
+              <a href="/Formation/bts_sio.html" class="btn btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="BTS SIO">
+            <div class="card-body">
+              <h5 class="card-title">OSINT</h5>
+              <p class="card-text">.</p>
               <a href="/Formation/bts_sio.html" class="btn btn-primary">En savoir plus</a>
             </div>
           </div>
@@ -203,61 +201,61 @@
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-
-    <!-- Script personnalisé (facultatif) -->
-    <script src="script.js"></script>
-
-    <!-- Animation "decoder" pour le titre -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const textElement = document.getElementById('thankYouText');
-        if (!textElement) return; // sécurité
-
-        const originalText = "PORTE FOLIO";
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_-+=[]{}|;:,.<>?';
-
-        // vider le noeud puis insérer des spans
-        textElement.textContent = '';
-        originalText.split('').forEach(char => {
-          const span = document.createElement('span');
-          span.innerHTML = char === ' ' ? '&nbsp;' : char;
-          textElement.appendChild(span);
-        });
-
-        const letters = Array.from(textElement.children);
-
-        function createDecoderAnimation() {
-          const tl = gsap.timeline({
-            onComplete: () => {
-              gsap.delayedCall(1, () => tl.restart());
-            }
-          });
-
-          letters.forEach((letter, i) => {
-            const originalChar = letter.innerHTML;
-            if (originalChar === '&nbsp;') return;
-
-            let proxy = { charIndex: 0 };
-
-            tl.to(proxy, {
-              charIndex: chars.length - 1,
-              duration: 1.5,
-              ease: "power2.inOut",
-              onUpdate: () => {
-                const randomIndex = Math.floor(Math.random() * chars.length);
-                letter.textContent = chars[randomIndex];
-              },
-              onComplete: () => {
-                letter.textContent = originalChar;
-              }
-            }, i * 0.08);
-          });
-
-          tl.to({}, { duration: 2 });
-        }
-
-        createDecoderAnimation();
-      });
-    </script>
+    
   </body>
+  <style>
+    /* Retiré le body { background-color: #0ad611 } conflictuant avec bg-dark */
+      /* Ajustements et corrections CSS */
+      .carousel-item {
+        height: 80vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      #linkedin,
+      #github {
+        width: 42px;
+        height: 42px;
+      }
+
+      .text-container {
+        text-align: center;
+      }
+
+      /* Remplacement de font-weight: 400px (incorrect) par font-weight: 400 */
+      #thank-you-text {
+        top: 1000px;
+        font-weight: 400;
+        font-size: clamp(2.5rem, 10vw, 8rem);
+        position: relative;
+        color: #11f756;
+        text-shadow: 0 0 5px #090b0a, 0 0 15px #050706, 0 0 30px #00ff99;
+        cursor: default;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .thank-you-text span {
+        display: inline-block;
+        position: relative;
+        min-width: 0.5ch;
+        will-change: contents;
+      }
+
+      /* Petit ajustement pour le footer */
+      footer .social-links a {
+        margin-right: 10px;
+        color: inherit;
+        text-decoration: none;
+      }
+      
+
+  </style>
 </html>
