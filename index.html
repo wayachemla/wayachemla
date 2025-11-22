@@ -4,28 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PORTE FOLIO</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <!--
-    ______________Note______________
-    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-
-    Sert à importer la feuille de style principale de Bootstrap (version 5.3.8) depuis un CDN (Content Delivery Network).
-
-    -->
+    <link href="css_js/index/bootstrap.min5.3.8.css" rel="stylesheet">
+    <link href="css_js/index/bootstrap.all.min.6.5.1.css" rel="stylesheet">
+    <link href="css_js/index/index.css" rel="stylesheet">
+    <script src="css_js/index/bootstrap3.11.4.js"></script>
+    <script src="css_js/index/bootstrap5.3.8.js"></script>
+    <script src="css_js/index/script.js"></script>
   </head>
-
   <body class="p-3 mb-2 bg-dark text-white">
-    <!-- 
-    ______________Note______________
-    "p-3 mb-2 bg-dark text-white"
-    
-    p-3:        Ajoute une marge intérieure     (padding) de 3 unités (Permet que le contenu du corps ne soit pas collé aux bords de la fenêtre.)
-    mb-2:       Ajoute une marge inférieure     (margin-bottom) de 2 unités (Crée un petit espace sous le corps (utile si d’autres éléments suivent, mais ici c’est souvent sans effet sur <body>).)
-    bg-dark:    Définit un fond sombre          (gris très foncé ou noir) (C’est une classe de couleur prédéfinie de Bootstrap.)
-    text-white: text-white                      (Permet de garder une bonne lisibilité sur le fond sombre.)
-    
-    -->
     <section>
       <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
@@ -59,35 +45,15 @@
                 </ul>
               </li>
             </ul>
-
-            <!--
-
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="submit">Search</button>
-
-            </form>
-            -->
           </div>
         </div>
       </nav>
     </section>
-
-    <!-- Début TITRE PORTEFOLIO EN JAVASCRIPT-->
-
     <br><br>
-
     <div class="text-container">
       <h1 class="thank-you-text" id="thankYouText"></h1>
     </div>
-
-    <!-- Fin TITRE PORTEFOLIO EN JAVASCRIPT-->
-    <!--
-    <img src="images.jpg">
-    -->
-
     <br><br><br><br><br><br>
-
     <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -125,7 +91,6 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
     <div class="container py-5">
       <h1 class="text-center mb-5">Mes compétences</h1>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -201,8 +166,6 @@
         </div>  
       </div>
     </div>
-    
-
     <!-- Footer -->
     <footer class="bg-dark text-white pt-5 pb-4">
       <div class="container">
@@ -244,111 +207,5 @@
         <a href="#" class="text-white"> Site web de Waya CHEMLA</a>
       </div>
     </footer>
-
   </body>
-
-  <style>
-    .carousel-item {
-      height: 80vh;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    .carousel-caption {
-      background-color: rgba(0, 0, 0, 0.9);
-      padding: 2rem;
-      border-radius: 10px;
-    }
-
-    body {
-      background-color: #0ad611;
-    }
-
-    #linkedin {
-      width: 42px;
-      height: 42px;
-    }
-
-    #github {
-      width: 42px;
-      height: 42px;
-    }
-
-    .text-container {
-      text-align: center;
-    }
-
-    #thank-you-text {
-      top: 1000px;
-      font-weight: 400px;
-      font-size: clamp(2.5rem, 10vw, 8rem);
-      position: relative;
-      color: #11f756;
-      text-shadow: 0 0 5px #090b0a, 0 0 15px #050706, 0 0 30px #00ff99;
-      cursor: default;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .thank-you-text span {
-      display: inline-block;
-      position: relative;
-      min-width: 0.5ch;
-      will-change: contents;
-    }
-  </style>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const textElement = document.getElementById('thankYouText');
-      const originalText = "PORTE FOLIO";
-
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_-+=[]{}|;:,.<>?';
-
-      originalText.split('').forEach(char => {
-        const span = document.createElement('span');
-        span.innerHTML = char === ' ' ? '&nbsp;' : char;
-        textElement.appendChild(span);
-      });
-
-      const letters = Array.from(textElement.children);
-
-      function createDecoderAnimation() {
-        const tl = gsap.timeline({
-          onComplete: () => {
-            gsap.delayedCall(1, () => tl.restart());
-          }
-        });
-
-        letters.forEach((letter, i) => {
-          const originalChar = letter.innerHTML;
-          if (originalChar === '&nbsp;') return;
-
-          let proxy = { charIndex: 0 };
-
-          tl.to(proxy, {
-            charIndex: chars.length - 1,
-            duration: 1.5,
-            ease: "power2.inOut",
-            onUpdate: () => {
-              const randomIndex = Math.floor(Math.random() * chars.length);
-              letter.textContent = chars[randomIndex];
-            },
-            onComplete: () => {
-              letter.textContent = originalChar;
-            }
-          }, i * 0.1);
-        });
-
-        tl.to({}, { duration: 2 });
-      }
-
-      createDecoderAnimation();
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </html>
