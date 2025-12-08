@@ -1,0 +1,45 @@
+.carousel-item {
+        height: 80vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      body {
+        background-color: #0ad611;
+      }
+
+      #linkedin,
+      #github {
+        width: 42px;
+        height: 42px;
+      }
+
+      .text-container {
+        text-align: center;
+      }
+
+      #thank-you-text {
+        top: 1000px;
+        font-weight: 400px;
+        font-size: clamp(2.5rem, 10vw, 8rem);
+        position: relative;
+        color: #11f756;
+        text-shadow: 0 0 5px #090b0a, 0 0 15px #050706, 0 0 30px #00ff99;
+        cursor: default;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .thank-you-text span {
+        display: inline-block;
+        position: relative;
+        min-width: 0.5ch;
+        will-change: contents;
+      }
