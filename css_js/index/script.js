@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
       const textElement = document.getElementById('thankYouText');
-      const originalText = "PORTE FOLIO";
+      const originalText = "PORTFOLIO";
 
       const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_-+=[]{}|;:,.<>?';
 
