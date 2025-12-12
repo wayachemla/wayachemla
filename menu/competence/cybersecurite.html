@@ -1,189 +1,116 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PORTE FOLIO</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
-    <!-- Styles spécifiques -->
-    <style>
-      /* Retiré le body { background-color: #0ad611 } conflictuant avec bg-dark */
-      /* Ajustements et corrections CSS */
-      .carousel-item {
-        height: 80vh;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-      
-      .carousel-caption {
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 2rem;
-        border-radius: 10px;
-      }
-
-      #linkedin,
-      #github {
-        width: 42px;
-        height: 42px;
-      }
-
-      .text-container {
-        text-align: center;
-      }
-
-      /* Remplacement de font-weight: 400px (incorrect) par font-weight: 400 */
-      #thank-you-text {
-        top: 1000px;
-        font-weight: 400;
-        font-size: clamp(2.5rem, 10vw, 8rem);
-        position: relative;
-        color: #11f756;
-        text-shadow: 0 0 5px #090b0a, 0 0 15px #050706, 0 0 30px #00ff99;
-        cursor: default;
-        text-transform: uppercase;
-        white-space: nowrap;
-      }
-
-      .thank-you-text span {
-        display: inline-block;
-        position: relative;
-        min-width: 0.5ch;
-        will-change: contents;
-      }
-
-      /* Petit ajustement pour le footer */
-      footer .social-links a {
-        margin-right: 10px;
-        color: inherit;
-        text-decoration: none;
-      }
-    </style>
+    <link href="../../css_js/competence/bootstrap.min5.3.8.css" rel="stylesheet">
+    <link href="../../css_js/competence/bootstrap.all.min.6.5.1.css" rel="stylesheet">
+    <link href="" rel="stylesheet">
+    <link href="../../css_js/competence/competence.css" rel="stylesheet">
+    <script src="../../css_js/competence/bootstrap5.3.8.js"></script>
+    <script src=""></script>
   </head>
-
   <body class="p-3 mb-2 bg-dark text-white">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">Waya CHEMLA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../index.html">Accueil</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Navigation
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../profil.html">Profil</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../formations.html">Formation</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="experiences.html">Expériences</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../certifications.html">Certifications</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../competences.html">Compétences</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../projets.html">Projets</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../veille.html">Veille</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../tableau.html">Tableau de synthèse</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../contact.html">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- TITRE PRINCIPAL ANIMÉ (utilisé par le script GSAP) -->
-    <header class="container py-4 text-center">
-      <!-- ID utilisé dans le JS : 'thankYouText' -->
-      <h1 id="thankYouText" class="mb-4">PORTE FOLIO</h1>
-      <h2 class="text-center mb-5">Certifications</h2>
-    </header>
-
-    <!-- CONTENU -->
-    <main class="container py-2">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://via.placeholder.com/500x200" class="card-img-top img-fluid" alt="BAC PRO SN">
-            <div class="card-body">
-              <h5 class="card-title">BAC PRO SN</h5>
-              <p class="card-text">Lycée Christophe Colomb.</p>
-              <a href="../formation/bacprosn.html" class="btn btn-primary">En savoir plus</a>
-            </div>
+    <section>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">Waya CHEMLA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Accueil</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Navigation
+                </a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="../profil.html">profil</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="../formations.html">formation</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="../competences.html">experiences</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="../certifications.html">certifications</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="../competences.html">compétences</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="../projets.html">Projets</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="../veille.html">Veille</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="../tableau.html">Tableau de synthèse</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="../contact.html">Contact</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
-
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://via.placeholder.com/500x200" class="card-img-top img-fluid" alt="BTS SIO">
-            <div class="card-body">
-              <h5 class="card-title">BTS SIO</h5>
-              <p class="card-text">Lycée.</p>
-              <a href="../formation/bts_sio.html" class="btn btn-primary">En savoir plus</a>
-            </div>
-          </div>
-        </div>
-    </main>
-
-    <!-- Audios (si présents dans /sounds) -->
-    <audio id="applause" src="sounds/applause.mp3"></audio>
-    <audio id="boo" src="sounds/boo.mp3"></audio>
-    <audio id="gasp" src="sounds/gasp.mp3"></audio>
-    <audio id="tada" src="sounds/tada.mp3"></audio>
-    <audio id="victory" src="sounds/victory.mp3"></audio>
-    <audio id="wrong" src="sounds/wrong.mp3"></audio>
-
-    <div id="buttons"></div>
-
-    <!-- FOOTER (placé à l'intérieur du body) -->
-    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+      </nav>
+    </section>
+    <div class="row">
+         <div class="col-md-4">
+             <div class="content"> 
+              <a href="https://veracrypt.io/en/Downloads.html">
+                     <div class="content-overlay"></div> <img class="content-image img-fluid" src="../../menu/competence/cybersecurite/veracrypt.jpg">
+                     <div class="content-details fadeIn-bottom">
+                         <h3 class="content-title">Veracrypt</h3>
+                         <p class="content-text"></p>
+                     </div>
+                 </a> </div>
+         </div>
+         <div class="col-md-4">
+             <div class="content"> <a href="https://learn.microsoft.com/fr-fr/windows/security/operating-system-security/data-protection/bitlocker/">
+                     <div class="content-overlay"></div> <img class="content-image img-fluid" src="../../menu/competence/cybersecurite/bitlocker.jpg">
+                     <div class="content-details fadeIn-bottom">
+                         <h3 class="content-title">bitlocker</h3>
+                         <p class="content-text"></p>
+                     </div>
+                 </a> </div>
+         </div>
+         <div class="col-md-4">
+             <div class="content"> <a href="https://www.proxmox.com/en/">
+                     <div class="content-overlay"></div> <img class="content-image img-fluid" src="../../menu/competence/systeme/proxmox.png">
+                     <div class="content-details fadeIn-bottom">
+                         <h3 class="content-title">Proxmox</h3>
+                         <p class="content-text"></p>
+                     </div>
+                 </a> </div>
+         </div>
+     </div>
+    </div>
+    <footer class="bg-dark text-white pt-5 pb-4">
       <div class="container">
         <div class="row">
           <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-            <h6 class="text-uppercase font-weight-bold mb-4"><a href="../profil.html" class="text-white">About</a></h6>
-            <p>Étudiant en étude supérieure dans la filière BTS SIO au lycée Turgot, j'ai pour objectif de devenir administrateur réseau.</p>
+            <h6 class="text-uppercase font-weight-bold mb-4"><a href="../profil.html">About</a></h6>
+            <p>
+              Étudiant en étude supérieure dans la filière BTS SIO au lycée Turgot, j'ai pour objectif de devenir administrateur réseau.
+            </p>
             <div class="social-links">
               <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
               <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
-
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase font-weight-bold mb-4">Produits</h6>
+            <h6 class="text-uppercase font-weight-bold mb-4">Products</h6>
             <p><a href="#" class="text-white">Product 1</a></p>
             <p><a href="#" class="text-white">Product 2</a></p>
             <p><a href="#" class="text-white">Product 3</a></p>
             <p><a href="#" class="text-white">Product 4</a></p>
           </div>
-
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase font-weight-bold mb-4">Liens utiles</h6>
-            <p><a href="#" class="text-white">Votre compte</a></p>
-            <p><a href="#" class="text-white">Devenir affilié</a></p>
-            <p><a href="#" class="text-white">Tarifs livraison</a></p>
-            <p><a href="#" class="text-white">Aide</a></p>
+            <h6 class="text-uppercase font-weight-bold mb-4">Useful links</h6>
+            <p><a href="#" class="text-white">Your Account</a></p>
+            <p><a href="#" class="text-white">Become an Affiliate</a></p>
+            <p><a href="#" class="text-white">Shipping Rates</a></p>
+            <p><a href="#" class="text-white">Help</a></p>
           </div>
-
           <div class="col-md-4 col-lg-3 col-xl-3 mb-md-0 mb-4">
             <h6 class="text-uppercase font-weight-bold mb-4">Contact</h6>
             <p><i class="fas fa-home mr-3"></i> Créteil</p>
@@ -192,76 +119,12 @@
           </div>
         </div>
       </div>
-
       <div class="text-center py-3">
         © 2025 Copyright:
         <a href="#" class="text-white"> Site web de Waya CHEMLA</a>
       </div>
     </footer>
-
-    <!-- Librairies JS -->
-    <!-- Bootstrap JS bundle (inclut Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-
-    <!-- Script personnalisé (facultatif) -->
-    <script src="script.js"></script>
-
-    <!-- Animation "decoder" pour le titre -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const textElement = document.getElementById('thankYouText');
-        if (!textElement) return; // sécurité
-
-        const originalText = "PORTE FOLIO";
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_-+=[]{}|;:,.<>?';
-
-        // vider le noeud puis insérer des spans
-        textElement.textContent = '';
-        originalText.split('').forEach(char => {
-          const span = document.createElement('span');
-          span.innerHTML = char === ' ' ? '&nbsp;' : char;
-          textElement.appendChild(span);
-        });
-
-        const letters = Array.from(textElement.children);
-
-        function createDecoderAnimation() {
-          const tl = gsap.timeline({
-            onComplete: () => {
-              gsap.delayedCall(1, () => tl.restart());
-            }
-          });
-
-          letters.forEach((letter, i) => {
-            const originalChar = letter.innerHTML;
-            if (originalChar === '&nbsp;') return;
-
-            let proxy = { charIndex: 0 };
-
-            tl.to(proxy, {
-              charIndex: chars.length - 1,
-              duration: 1.5,
-              ease: "power2.inOut",
-              onUpdate: () => {
-                const randomIndex = Math.floor(Math.random() * chars.length);
-                letter.textContent = chars[randomIndex];
-              },
-              onComplete: () => {
-                letter.textContent = originalChar;
-              }
-            }, i * 0.08);
-          });
-
-          tl.to({}, { duration: 2 });
-        }
-
-        createDecoderAnimation();
-      });
-    </script>
-  </body>
 </html>
+
 
 
