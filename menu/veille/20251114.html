@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PORTE FOLIO</title>
+    <link href="/../css_js/profil/bootstrap.min5.3.8.css" rel="stylesheet">
+    <link href="/../css_js/profil/bootstrap.all.min.6.5.1.css" rel="stylesheet">
+    <link href="/../css_js/profil/profil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="/../css_js/index/bootstrap5.3.8.js"></script>
+    <script src="/../css_js/index/bootstrap3.11.4.js"></script>
+  </head>
+  <body class="p-3 mb-2 bg-dark text-white">
+    <section>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Waya CHEMLA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Navigation
+                </a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/../profil.html">Profil</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/../formations.html">Formation</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/../experiences.html">Expériences</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/../certifications.html">Certifications</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/../competences.html">Compétences</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/../projets.html">Projets</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/../veille.html">Veille</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/../tableau.html">Tableau de synthèse</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/../contact.html">Contact</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/../evenement.html">Evenement</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/../benevolat.html">Benevolat</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/../documentation.html">Documentation</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+      <div class="container text-left">
+        <div class="border shadow-sm p-2">
+          <h1 class="display-2 font-weight-bold pb-3">2025-11-14 </h1>
+        <div class="row">
+        <div class="col text-center">
+          <br><br><br><br><br>
+          <p>
+
+
+
+Comment la virtualisation sur OpenShift a évolué depuis la fusion Broadcom-VMware
+
+Clément Bohic
+
+Six versions mineures d'OpenShift sont sorties depuis l'acquisition de VMware par Broadcom. Focus sur l'évolution fonctionnelle de la brique de virtualisation.
+
+The post Comment la virtualisation sur OpenShift a évolué depuis la fusion Broadcom-VMware appeared first on Silicon.fr.
+
+Six versions mineures d'OpenShift sont sorties depuis l'acquisition de VMware par Broadcom. Focus sur l'évolution fonctionnelle de la brique de virtualisation.
+
+The post Comment la virtualisation sur OpenShift a évolué depuis la fusion Broadcom-VMware appeared first on Silicon.fr.
+
+Broadcom et VMware, cela fera bientôt deux ans. Le 22 novembre 2023, le premier
+
+finalisait
+
+l'acquisition du second. Il n'allait pas tarder à en bouleverser la politique commerciale, avec les
+
+conséquences
+
+que l'on sait. Quantité de fournisseurs d'offres concurrentes se sont engouffrés dans la brèche, tentant de capter le replatforming des parcs de VM. Red Hat n'y a pas fait exception. Il a évidemment mis en avant la conteneurisation sur OpenShift. Mais aussi la brique de virtualisation intégrée à la plate-forme
+
+depuis l'été 2020
+
+. Jusqu'à en faire un produit spécifique, lancé début 2025 :
+
+OpenShift Virtualization Engine
+
+, qui n'inclut pas de droit d'usage de conteneurs applicatifs.
+
+Topologie localnet et instances personnalisées
+
+Au-delà de la stratégie commerciale, OpenShift Virtualization a connu des évolutions fonctionnelles notables depuis la fusion Broadcom-VMware. Six versions mineures sont sorties, à commencer par la 4.15 (publiée le 27 février 2024 ; arrivée en fin de vie le 27 août 2025). Cette version avait notamment apporté la gestion du branchement à chaud d'interfaces réseau secondaires sur les VM (hors interfaces SR-IOV). Elle avait aussi ajouté la prise en charge de la topologie localnet pour les réseaux secondaires OVN-Kubernetes (connexion à la sous-couche physique). Autre élément ajouté : le KSM (kernel samepage merging). Cette fonctionnalité s'enclenche lorsqu'un nœud est surchargé. Elle déduplique les données identiques trouvées dans les pages mémoire des VM. OpenShift Virtualization 4.15 a également permis d'activer l' accès aux logs console des invités  et de configurer des clusters pour les workloads DPDK (Data Plane Development Kit, délégation du traitement des paquets TCP à des processus en espace utilisateur) sur SR-IOV. La console web avait été enrichie en parallèle pour permettre l'installation et l'édition de types d'instances personnalisés. Et pour importer des secrets depuis d'autres projets lors de l'ajout d'une clé SSH publique à une VM en cours de création ou d'un secret à une VM existante.
+
+Hotplug de vCPU et accès headless aux VM
+
+Le 27 juin 2024 sortait OpenShift Virtualization 4.16. Cette version est actuellement en phase de maintenance, jusqu'au 27 décembre 2025. Le support étendu durera jusqu'au 27 juin 2026. Avec elle, le hotplug de vCPU est passé en disponibilité générale. Il est aussi devenu possible d' accéder à une VM à travers des services Kubernetes headless, en utilisant son nom de domaine interne. Et d'activer la featuregate AutoResourceLimits pour gérer automatiquement les limites CPU et mémoire des VM. OpenShift Virtualization 4.16 a aussi ajouté la possibilité de sélectionner les options sysprep à la création de VM Windows plutôt que par après. Et d' exposer certaines métriques d'hôte ou d'invité au sein des VM, en ligne de commande ou via l'outil vm-dump-metrics.
+
+Gestion de la densité des workloads et exposition de périphériques USB
+
+OpenShift Virtualization 4.17, sorti le 1 er octobre 2024, arrivera en fin de vie le 1 er avril 2026, sans phase de support étendu. Avec cette version, Red Hat a certifié la prise en charge de Windows Server 2025 comme OS invité. Il a aussi permis de sélectionner un namespace personnalisé pour ses golden images. Et donné la possibilité d' accroître la densité de workloads dans les VM en surréservant (overcommit) la RAM . Comme d' exposer des périphériques USB dans un cluster, de sorte que les propriétaires de VM peuvent ensuite les assigner. Le hotplug de CPU et de mémoire depuis la console est passé en disponibilité générale avec OpenShift Virtualization 4.17. Même chose pour la configuration de stratégies d'éviction de VM à l'échelle d'un cluster.
+
+Réseaux définis par l'utilisateur et changement à chaud de type d'instance
+
+Sorti le 25 février 2025, OpenShift Virtualization 4.18 arrivera en fin de maintenance le 25 août 2026. Le support étendu durera jusqu'au 25 février 2027. Depuis cette version, on peut connecter une VM à un réseau défini par l'utilisateur sur l'interface primaire. On peut aussi changer le type d'instance associé à une VM en cours d'exécution, sans redémarrage. Autre ajout : la capacité de créer des snapshots de VM auxquelles on ajoute un vTPM . Et de les restaurer à partir de ces snapshots (mais pas d'en créer de nouvelles, ni de les cloner). La console a quant à elle évolué pour permettre de contrôler simultanément l'état de plusieurs VM. Et de visualiser des métriques de niveau workload pour les ressources disque, CPU et réseau allouées.
+
+Protection des VM et threads I/O multiples pour le stockage flash
+
+OpenShift Virtualization 4.19 fut publié le 17 juin 2025. Il entrera en phase de maintenance le 17 décembre 2025 et n'aura pas de support étendu. Avec cette version, RHEL 10 rejoint la liste des OS invités certifiés. Red Hat introduit aussi un mécanisme de protection des VM contre la suppression. Et permet de mettre à jour le type de machine pour plusieurs VM à la fois depuis le CLI OpenShift. La topologie localnet sur OVN-Kubernetes est devenue utilisable pour connecter une VM à un réseau secondaire défini par l'utilisateur. Et il est devenu possible de configurer un manifeste NodeNetworkConfigurationPolicy pour activer l'écoute LLDP sur tous les ports Ethernet d'un cluster. Autre nouveauté : la possibilité de configurer plusieurs threads I/O pour les VM utilisant de la mémoire flash . Quant à la console, elle a évolué pour proposer davantage d'actions groupées sur les VM (gestion des étiquettes, déplacement dans un autre dossier au sein d'un même namespace...). Des métriques supplémentaires ont par ailleurs été mises à disposition, concernant les migrations, les vNIC et le stockage alloué aux VM.
+
+Topologie NUMA et saut de versions de correction
+
+La dernière version mineure en date (4.20) est sortie le 21 octobre 2025. Elle arrivera en fin de vie le 21 avril 2027, sans support étendu. Avec elle, Red Hat permet de sauter des versions de correction (pas besoin d'installer toutes les versions intermédiaires lorsqu'on met à jour). Plusieurs éléments passent en disponibilité générale, dont la possibilité d'exploiter la topologie NUMA (non-uniform memory access) pour les VM . Elle permet de définir des zones au sein desquelles les CPU bénéficient d'un accès plus rapide aux ressources locales que les CPU externes. Le profil KubeVirtRelieveAndMigrate, qui améliore la stabilité de l'éviction de VM lors des migrations à chaud, est également passé en disponibilité générale. Idem pour la possibilité de déployer OpenShift Virtualization sur OCI et en bare metal sur cluster ARM64 . Dans la console, on peut désormais, lors de migrations à chaud, spécifier le nœud vers lequel déplacer une VM. Parallèlement, la procédure de hotplug de disques s'est enrichie d'une étape optionnelle permettant de sélectionner un type de bus. Illustration © Annika – Adobe Stock
+</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+            <h6 class="text-uppercase font-weight-bold mb-4"><a href="profil.html">About</a></h6>
+            <p>
+              Étudiant en étude supérieure dans la filière BTS SIO au lycée Turgot, j'ai pour objectif de devenir administrateur réseau.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold mb-4">Products</h6>
+            <p><a href="#" class="text-white">Product 1</a></p>
+            <p><a href="#" class="text-white">Product 2</a></p>
+            <p><a href="#" class="text-white">Product 3</a></p>
+            <p><a href="#" class="text-white">Product 4</a></p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold mb-4">Useful links</h6>
+            <p><a href="#" class="text-white">Your Account</a></p>
+            <p><a href="#" class="text-white">Become an Affiliate</a></p>
+            <p><a href="#" class="text-white">Shipping Rates</a></p>
+            <p><a href="#" class="text-white">Help</a></p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mb-md-0 mb-4">
+            <h6 class="text-uppercase font-weight-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home mr-3"></i> Créteil</p>
+            <p><i class="fas fa-envelope mr-3"></i> waya.chemla.sn@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +(33)7.66.63.67.70</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center py-3">
+        © 2025 Copyright:
+        <a href="#" class="text-white"> Site web de Waya CHEMLA</a>
+      </div>
+    </footer>
+</html>
