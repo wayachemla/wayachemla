@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Projets</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS personnalisé -->
+    <style>
+        /* === VARIABLES DE COULEURS === */
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #252525;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent: #4a9eff;
+            --accent-hover: #3a8eef;
+        }
+        
+        /* === STYLES GÉNÉRAUX === */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background-color: var(--bg-secondary) !important;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            color: var(--text-primary) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary) !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent) !important;
+        }
+        
+        /* === CONTENU PRINCIPAL === */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        /* === CARTE DE PROJET AVEC ACCORDÉON === */
+        .project-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #333;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        
+        .project-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .project-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .project-header:hover {
+            background-color: rgba(74, 158, 255, 0.05);
+        }
+        
+        .project-header-content {
+            flex: 1;
+        }
+        
+        .project-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .project-short-desc {
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0;
+        }
+        
+        .tech-badge {
+            background-color: var(--bg-secondary);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            border: 1px solid #333;
+        }
+        
+        .toggle-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+        
+        .toggle-icon.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .project-details.active {
+            max-height: 2000px;
+            transition: max-height 0.6s ease-in;
+        }
+        
+        .project-details-content {
+            padding: 1.5rem;
+            border-top: 1px solid #333;
+        }
+        
+        .detail-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-section h4 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .detail-section p,
+        .detail-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .detail-section ul {
+            margin-left: 1.2rem;
+        }
+        
+        .detail-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .project-link {
+            background-color: var(--bg-secondary);
+            color: var(--accent);
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+        
+        .project-link:hover {
+            background-color: var(--accent);
+            color: var(--text-primary);
+            border-color: var(--accent);
+        }
+        
+        .impact-box {
+            background-color: var(--bg-secondary);
+            border-left: 3px solid var(--accent);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+        
+        .impact-box strong {
+            color: var(--accent);
+        }
+        
+        /* === FOOTER === */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid #333;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- === BARRE DE NAVIGATION === -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mon Portfolio</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formation.html">Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Expérience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="competences.html">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projets.html">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tableau-synthese.html">Synthèse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="evenement.html">Événements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="benevolat.html">Bénévolat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ctf.html">CTF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- === CONTENU PRINCIPAL === -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Mes Projets</h1>
+            
+            <!-- PROJET 1 : Virtualisation Proxmox + pfSense -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject('project1')">
+                    <div class="project-header-content">
+                        <h3>Virtualisation et Sécurité avec Proxmox et pfSense</h3>
+                        <p class="project-short-desc">Déploiement d'un environnement virtualisé sécurisé avec Proxmox et pfSense au lycée Turgot.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Proxmox VE</span>
+                            <span class="tech-badge">pfSense</span>
+                            <span class="tech-badge">Alpine Linux</span>
+                            <span class="tech-badge">Virtualisation</span>
+                        </div>
+                    </div>
+                    <div class="toggle-icon" id="icon-project1">▼</div>
+                </div>
+                <div class="project-details" id="details-project1">
+                    <div class="project-details-content">
+                        <div class="detail-section">
+                            <h4>📝 Contexte</h4>
+                            <p>Dans le cadre de mon apprentissage en SISR au lycée Turgot, j'ai déployé un environnement virtualisé sécurisé à l'aide de Proxmox et pfSense. Ce projet m'a permis de concrétiser mes connaissances en infrastructure et sécurité réseau.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🎯 Objectifs</h4>
+                            <ul>
+                                <li>Installer Proxmox sur un hyperviseur pour créer un environnement de virtualisation robuste.</li>
+                                <li>Déployer une distribution Linux légère (Alpine Linux) pour tester la flexibilité du système.</li>
+                                <li>Intégrer pfSense dans Proxmox pour gérer la sécurité réseau (pare-feu, routage).</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>⚙️ Réalisations</h4>
+                            <ul>
+                                <li>Installation et configuration de Proxmox VE sur serveur physique.</li>
+                                <li>Déploiement d'Alpine Linux comme VM légère dans l'hyperviseur.</li>
+                                <li>Configuration de pfSense en tant que pare-feu/routeur virtuel.</li>
+                                <li>Mise en réseau des VMs au sein de l'environnement Proxmox.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🛠️ Technologies Utilisées</h4>
+                            <ul>
+                                <li><strong>Virtualisation :</strong> Proxmox VE</li>
+                                <li><strong>Système :</strong> Alpine Linux</li>
+                                <li><strong>Réseau / Sécurité :</strong> pfSense</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>📅 Évolution du projet</h4>
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/activity-7410786221162926080-9UW1" target="_blank" class="project-link">🔗 28/12/2025 — LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 2 : Hardening -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject('project2')">
+                    <div class="project-header-content">
+                        <h3>Projet de Hardening (Durcissement)</h3>
+                        <p class="project-short-desc">Durcissement d'un poste de travail dans le cadre de la formation BTS SIO au lycée Turgot.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Cybersécurité</span>
+                            <span class="tech-badge">Windows</span>
+                            <span class="tech-badge">Audit</span>
+                            <span class="tech-badge">Hardening</span>
+                        </div>
+                    </div>
+                    <div class="toggle-icon" id="icon-project2">▼</div>
+                </div>
+                <div class="project-details" id="details-project2">
+                    <div class="project-details-content">
+                        <div class="detail-section">
+                            <h4>📝 Contexte</h4>
+                            <p>Dans le cadre de notre formation BTS SIO au lycée Turgot (69 rue de Turbigo, Paris 3ᵉ), nous avons réalisé un projet de durcissement d'un poste de travail. Ce projet a été proposé par un ancien étudiant de BTS SIO, aujourd'hui professionnel de la cybersécurité, afin de nous confronter à des problématiques concrètes proches de celles rencontrées en entreprise.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🎯 Objectifs</h4>
+                            <ul>
+                                <li>Appliquer des mesures de sécurité concrètes sur un poste de travail.</li>
+                                <li>Documenter, justifier et auditer chaque action réalisée.</li>
+                                <li>S'inscrire dans une démarche professionnelle de cybersécurité.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>⚙️ Réalisations</h4>
+                            <ul>
+                                <li>Audit de sécurité du poste de travail existant.</li>
+                                <li>Application des mesures de durcissement (politique de mots de passe, désactivation de services, pare-feu local).</li>
+                                <li>Rédaction d'un rapport technique complet.</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>📅 Évolution du projet</h4>
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/activity-7396901799158259712-JQw3" target="_blank" class="project-link">🔗 24/11/2025</a>
+                                <a href="https://www.linkedin.com/posts/activity-7399103355916193792-U7tt" target="_blank" class="project-link">🔗 01/12/2025</a>
+                                <a href="https://www.linkedin.com/posts/activity-7401643628437164033-2WLS" target="_blank" class="project-link">🔗 02/12/2025</a>
+                                <a href="menu/Projet/projet_durcicemnet/Rapport_Projet_Hardening.pdf" class="project-link">📄 Rapport PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 3 : Création site internet -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject('project3')">
+                    <div class="project-header-content">
+                        <h3>Création d'un site internet</h3>
+                        <p class="project-short-desc">Création d'un site web pour le lycée Christophe Colomb.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="toggle-icon" id="icon-project3">▼</div>
+                </div>
+                <div class="project-details" id="details-project3">
+                    <div class="project-details-content">
+                        <div class="detail-section">
+                            <h4>📝 Contexte</h4>
+                            <p>Projet réalisé pour le lycée Christophe Colomb consistant à concevoir et développer un site internet.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="menu/Projet/site_internet.html" class="project-link">🔗 Voir la page projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 4 : Serveur IIS -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject('project4')">
+                    <div class="project-header-content">
+                        <h3>Mettre en place un serveur IIS</h3>
+                        <p class="project-short-desc">Installation et configuration d'un serveur web IIS — lycée Christophe Colomb.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Windows Server</span>
+                            <span class="tech-badge">IIS</span>
+                            <span class="tech-badge">Administration</span>
+                        </div>
+                    </div>
+                    <div class="toggle-icon" id="icon-project4">▼</div>
+                </div>
+                <div class="project-details" id="details-project4">
+                    <div class="project-details-content">
+                        <div class="detail-section">
+                            <h4>📝 Contexte</h4>
+                            <p>Projet réalisé au lycée Christophe Colomb visant à installer et configurer un serveur web IIS sous Windows Server.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="menu/Projet/serveur_iis.html" class="project-link">🔗 Voir la page projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 5 : Upgrade PC -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject('project5')">
+                    <div class="project-header-content">
+                        <h3>Upgrade d'un PC</h3>
+                        <p class="project-short-desc">Mise à niveau matérielle d'un poste de travail — lycée Turgot.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Hardware</span>
+                            <span class="tech-badge">Maintenance</span>
+                        </div>
+                    </div>
+                    <div class="toggle-icon" id="icon-project5">▼</div>
+                </div>
+                <div class="project-details" id="details-project5">
+                    <div class="project-details-content">
+                        <div class="detail-section">
+                            <h4>📝 Contexte</h4>
+                            <p>Projet réalisé au lycée Turgot consistant à effectuer une mise à niveau matérielle (upgrade) d'un poste de travail.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="menu/Projet/pc_upgrade.html" class="project-link">🔗 Voir la page projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 6 : Portfolio -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject('project6')">
+                    <div class="project-header-content">
+                        <h3>Portfolio</h3>
+                        <p class="project-short-desc">Conception et développement de mon portfolio BTS SIO — lycée Turgot.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">Bootstrap</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="toggle-icon" id="icon-project6">▼</div>
+                </div>
+                <div class="project-details" id="details-project6">
+                    <div class="project-details-content">
+                        <div class="detail-section">
+                            <h4>📝 Contexte</h4>
+                            <p>Création d'un portfolio web dans le cadre de la formation BTS SIO au lycée Turgot pour présenter mes compétences, projets et parcours.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="menu/Projet/portfolio.html" class="project-link">🔗 Voir la page projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 7 : AfterWork -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject('project7')">
+                    <div class="project-header-content">
+                        <h3>AfterWork</h3>
+                        <p class="project-short-desc">Projet AfterWork — lycée Turgot.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Lycée Turgot</span>
+                        </div>
+                    </div>
+                    <div class="toggle-icon" id="icon-project7">▼</div>
+                </div>
+                <div class="project-details" id="details-project7">
+                    <div class="project-details-content">
+                        <div class="project-links">
+                            <a href="menu/Projet/after_work.html" class="project-link">🔗 Voir la page projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 8 : CEJMA -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject('project8')">
+                    <div class="project-header-content">
+                        <h3>CEJMA</h3>
+                        <p class="project-short-desc">Projet CEJMA — lycée Turgot.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Lycée Turgot</span>
+                        </div>
+                    </div>
+                    <div class="toggle-icon" id="icon-project8">▼</div>
+                </div>
+                <div class="project-details" id="details-project8">
+                    <div class="project-details-content">
+                        <div class="project-links">
+                            <a href="menu/Projet/CEJMA.html" class="project-link">🔗 Voir la page projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 9 : Installer Ubuntu VM -->
+            <div class="project-card">
+                <div class="project-header" onclick="toggleProject('project9')">
+                    <div class="project-header-content">
+                        <h3>Installer Ubuntu en VM</h3>
+                        <p class="project-short-desc">Installation d'Ubuntu dans une machine virtuelle — lycée Turgot.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Ubuntu</span>
+                            <span class="tech-badge">Virtualisation</span>
+                            <span class="tech-badge">Linux</span>
+                        </div>
+                    </div>
+                    <div class="toggle-icon" id="icon-project9">▼</div>
+                </div>
+                <div class="project-details" id="details-project9">
+                    <div class="project-details-content">
+                        <div class="project-links">
+                            <a href="menu/Projet/installer_ubuntu_vm.html" class="project-link">🔗 Voir la page projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tu peux copier-coller ce modèle pour ajouter d'autres projets -->
+            
+        </div>
+    </main>
+    
+    <!-- === FOOTER === -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Portfolio BTS SIO | Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript personnalisé -->
+    <script>
+        // Fonction pour ouvrir/fermer les détails d'un projet
+        function toggleProject(projectId) {
+            const details = document.getElementById('details-' + projectId);
+            const icon = document.getElementById('icon-' + projectId);
+            
+            // Basculer la classe active
+            details.classList.toggle('active');
+            icon.classList.toggle('rotated');
+        }
+    </script>
+    
+</body>
+</html>

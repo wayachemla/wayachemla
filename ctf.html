@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - CTF</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS personnalisé -->
+    <style>
+        /* === VARIABLES DE COULEURS === */
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #252525;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent: #4a9eff;
+            --accent-hover: #3a8eef;
+        }
+        
+        /* === STYLES GÉNÉRAUX === */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background-color: var(--bg-secondary) !important;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            color: var(--text-primary) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary) !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent) !important;
+        }
+        
+        /* === CONTENU PRINCIPAL === */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .page-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+        
+        /* === STATISTIQUES === */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        /* === CARTE DE CHALLENGE === */
+        .ctf-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .ctf-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        
+        .ctf-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .ctf-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .difficulty-badge {
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        
+        .difficulty-easy {
+            background-color: #1a4d2e;
+            color: #4ade80;
+        }
+        
+        .difficulty-medium {
+            background-color: #4a3a1a;
+            color: #fbbf24;
+        }
+        
+        .difficulty-hard {
+            background-color: #4d1a1a;
+            color: #f87171;
+        }
+        
+        .ctf-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .ctf-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .ctf-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .ctf-tag {
+            background-color: var(--bg-secondary);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            border: 1px solid #333;
+        }
+        
+        .flag {
+            background-color: var(--bg-secondary);
+            color: #4ade80;
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin-top: 1rem;
+            border-left: 3px solid #4ade80;
+        }
+        
+        /* === FOOTER === */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid #333;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- === BARRE DE NAVIGATION === -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mon Portfolio</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formation.html">Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Expérience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="competences.html">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tableau-synthese.html">Synthèse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="evenement.html">Événements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="benevolat.html">Bénévolat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ctf.html">CTF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- === CONTENU PRINCIPAL === -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">🏴 Capture The Flag (CTF)</h1>
+            <p class="page-subtitle">
+                Mes participations et résolutions de challenges de cybersécurité
+            </p>
+            
+            <!-- Statistiques -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">XX</div>
+                    <div class="stat-label">Challenges résolus</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">X</div>
+                    <div class="stat-label">CTF participés</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">XXX</div>
+                    <div class="stat-label">Points cumulés</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Top XX</div>
+                    <div class="stat-label">Meilleur classement</div>
+                </div>
+            </div>
+            
+            <!-- Challenge 1 : Web -->
+            <div class="ctf-card">
+                <div class="ctf-header">
+                    <div>
+                        <h3>🌐 FTP - Authentification</h3>
+                        <div class="ctf-meta">
+                            Plateforme : Root-Me<br>
+                        </div>
+                    </div>
+                    <span class="difficulty-badge difficulty-easy">Facile</span>
+                </div>
+                
+                <p>
+                    <strong>Description :</strong> Un échange authentifié de fichier réalisé grâce au protocole FTP. 
+                                                    Retrouvez le mot de passe utilisé par l’utilisateur.
+                </p>
+                <!--
+                <p>
+                    <strong>Méthodologie :</strong> Analyse du formulaire de connexion, test de différentes 
+                    injections SQL, extraction des tables et colonnes, récupération du flag.
+                </p>
+                
+                <p>
+                    <strong>Outils utilisés :</strong> Burp Suite, SQLMap, navigateur web
+                </p>
+                
+                <div class="flag">
+                    🚩 Flag : CTF{example_flag_here_12345}
+                </div>
+                -->
+                <div class="ctf-tags">
+                    <span class="ctf-tag">Trames Ethernet</span>
+                    <span class="ctf-tag">http basic authentication</span>
+                </div>
+            </div>
+            
+            <!-- Challenge 2 : Cryptographie -->
+            <div class="ctf-card">
+                <div class="ctf-header">
+                    <div>
+                        <h3>🌐 TELNET - authentification</h3>
+                        <div class="ctf-meta">
+                            Plateforme : Root-Me<br>
+                        </div>
+                    </div>
+                    <span class="difficulty-badge difficulty-easy">Facile</span>
+                </div>
+                
+                <p>
+                    <strong>Description :</strong> Retrouvez le mot de passe de l’utilisateur dans cette capture réseau de session TELNET.
+                </p>
+                
+                <p>
+                    <strong>Méthodologie :</strong> Analyse de la clé publique, factorisation du module n, 
+                    calcul de la clé privée, déchiffrement du message.
+                </p>
+                <!--
+                <p>
+                    <strong>Outils utilisés :</strong> Python, RsaCtfTool, factordb
+                </p>
+                
+                <div class="flag">
+                    🚩 Flag : CTF{rsa_crypto_challenge_solved}
+                </div>
+                -->
+                <div class="ctf-tags">
+                    <span class="ctf-tag">TELNET PROTOCOL</span>
+                </div>
+            </div>
+            
+            <!-- Challenge 3 : Steganographie -->
+            <div class="ctf-card">
+                <div class="ctf-header">
+                    <div>
+                        <h3>🌐 ETHERNET - trame</h3>
+                        <div class="ctf-meta">
+                            Plateforme : Root-Me<br>
+                        </div>
+                    </div>
+                    <span class="difficulty-badge difficulty-easy">Facile</span>
+                </div>
+                
+                <p>
+                    <strong>Description :</strong> Retrouvez les données normalement confidentielles contenues dans cette trame.
+                </p>
+                <!--
+                <p>
+                    <strong>Méthodologie :</strong> Analyse de l'image avec différents outils, extraction 
+                    des métadonnées, détection de données cachées dans les bits de poids faible (LSB).
+                </p>
+                
+                <p>
+                    <strong>Outils utilisés :</strong> Steghide, ExifTool, Stegsolve
+                </p>
+                
+                <div class="flag">
+                    🚩 Flag : CTF{hidden_message_found}
+                </div>
+                -->
+                <div class="ctf-tags">
+                    <span class="ctf-tag">Format des trames Ethernet</span>
+                    <span class="ctf-tag">Http Basic Authentication</span>
+                </div>
+            </div>
+            
+            <!-- Challenge 4 : Reverse Engineering -->
+            <div class="ctf-card">
+                <div class="ctf-header">
+                    <div>
+                        <h3>🏁 CTF Passe Ton Hack d’Abord 2026</h3>
+                        <div class="ctf-meta">
+                            Plateforme : [CTF Passe Ton Hack d’Abord 2026<br>
+                            📅 Résolu le : [Février 2026] | ⏱️ Temps : 1 Mois
+                        </div>
+                    </div>
+                    <span class="difficulty-badge difficulty-hard">Difficile</span>
+                </div>
+                
+                <p>
+                    <strong>Description :</strong> Avec mon groupe Hack Korp CTF, composé de 5 personnes, nous avons réussi à atteindre la 467ᵉ place sur 822 équipes.
+                    🔗 CTF organisé par le ministère de l’Éducation nationale :
+                    https://www.education.gouv.fr/passe-ton-hack-d-abord-le-plus-grand-challenge-cyber-de-france-va-plonger-les-lyceennes-et-lyceens-416207
+                    Au total, nous avons résolu plusieurs challenges dans différentes catégories :
+
+                    🧩 Challenges réalisés
+
+                    Introduction — Introduction (+5 pts)
+
+                    La recrue — Stéganographie (+10 pts)
+
+                    Le repaire – Parties 1, 2 et 3 — OSINT (+100 pts)
+
+                    La Traque – Partie 1 — OSINT (+25 pts)
+
+                    Petite Sieste – Parties 1 et 2 — Forensique (+50 pts)
+
+                    Compétition sur la toile — Web (+25 pts)
+
+                    Écho de l’Abîme — Programmation (+75 pts)
+
+                    Expressionnisme — Rétro-ingénierie (+25 pts)
+
+                    Ce CTF nous a permis de renforcer nos compétences en OSINT, forensique, web, programmation et rétro-ingénierie, mais aussi de travailler en équipe, sous contrainte de temps.
+
+                    Une expérience très formatrice, avec encore beaucoup à apprendre — mais une vraie progression collective.
+                </p>
+                <!--
+                <p>
+                    <strong>Méthodologie :</strong> Désassemblage du binaire, analyse du code assembleur, 
+                    identification de l'algorithme de vérification, récupération du flag.
+                </p>
+                
+                <p>
+                    <strong>Outils utilisés :</strong> Ghidra, IDA Free, GDB
+                </p>
+                
+                <div class="flag">
+                    🚩 Flag : CTF{reverse_engineering_master}
+                </div>
+                -->
+                <div class="ctf-tags">
+                    <span class="ctf-tag">OSINT</span>
+                    <span class="ctf-tag">Stéganographie</span>
+                    <span class="ctf-tag">Forensique </span>
+                    <span class="ctf-tag">Programmation</span>
+                    <span class="ctf-tag">Web</span>
+                    <span class="ctf-tag">Rétro-ingénierie</span>
+                </div>
+            </div>
+            
+            <!-- Tu peux ajouter d'autres challenges CTF ici en copiant un bloc -->
+            
+        </div>
+    </main>
+    
+    <!-- === FOOTER === -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Portfolio BTS SIO | Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript personnalisé -->
+    <script>
+        // JavaScript pour filtrer par catégorie ou difficulté si besoin
+    </script>
+    
+</body>
+</html>

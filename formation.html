@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Formation</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS personnalisé -->
+    <style>
+        /* === VARIABLES DE COULEURS === */
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #252525;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent: #4a9eff;
+            --accent-hover: #3a8eef;
+        }
+        
+        /* === STYLES GÉNÉRAUX === */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background-color: var(--bg-secondary) !important;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            color: var(--text-primary) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary) !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent) !important;
+        }
+        
+        /* === CONTENU PRINCIPAL === */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        /* === TIMELINE === */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: var(--accent);
+        }
+        
+        .timeline-item {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #333;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            border: 3px solid var(--bg-primary);
+        }
+        
+        .timeline-item h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item .period {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* === FOOTER === */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid #333;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline-item::before {
+                left: -38px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- === BARRE DE NAVIGATION === -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mon Portfolio</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="formation.html">Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Expérience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="competences.html">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tableau-synthese.html">Synthèse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="evenement.html">Événements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="benevolat.html">Bénévolat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ctf.html">CTF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- === CONTENU PRINCIPAL === -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Parcours de Formation</h1>
+            
+            <!-- Timeline des formations -->
+            <div class="timeline">
+                
+                <!-- Formation 1 : BTS SIO -->
+                <div class="timeline-item">
+                    <h3>BTS SIO - Services Informatiques aux Organisations</h3>
+                    <div class="period">📅 2025 -  | Lycée public Turgot - Paris</div>
+                    <p>
+                        <strong>Option :</strong>SISR (Solutions d'Infrastructure, Systèmes et Réseaux)
+                    </p>
+                    <p>
+                        Formation axée sur l'administration système et réseau. Apprentissage des méthodologies de gestion de projet.
+                    </p>
+                    <p>
+                        <strong>Matières principales :</strong> Réseaux, Cybersécurité, Gestion de projet, Anglais technique.
+                    </p>
+                </div>
+                
+                <!-- Formation 2 : Baccalauréat -->
+                <div class="timeline-item">
+                    <h3>Baccalauréat [Série]</h3>
+                    <div class="period">📅 2022 - 2025 | Lycée Polyvalent Christophe Colomb - sucy-en-brie</div>
+                    <p>
+                        Obtention du baccalauréat professionnel en système numérique avec mention [Mention Très Bien].
+                    <p>
+                        J’ai suivi un bac professionnel Systèmes Numériques au lycée Christophe Colomb de Sucy-en-Brie. 
+                        Durant ces trois années, j’ai développé des compétences en réseau, en systèmes informatiques et en développement. J’ai également réalisé trois périodes de formation en milieu professionnel, ce qui m’a permis de mettre en pratique mes compétences et de découvrir concrètement le fonctionnement du secteur. 
+                    </p>
+                </div>
+                
+                <!-- Formation 3 : Autre formation (optionnel) -->
+                <!-- Tu peux copier-coller ce bloc pour ajouter d'autres formations -->
+                <!--
+                <div class="timeline-item">
+                    <h3>Nom de la formation</h3>
+                    <div class="period">📅 Dates | Établissement - Ville</div>
+                    <p>
+                        Description de la formation, compétences acquises, projets réalisés...
+                    </p>
+                </div>
+                -->
+                
+            </div>
+        </div>
+    </main>
+    
+    <!-- === FOOTER === -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Portfolio BTS SIO | Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript personnalisé -->
+    <script>
+        // JavaScript pour ajouter des animations ou interactions si nécessaire
+    </script>
+    
+</body>
+</html>

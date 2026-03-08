@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Événements</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #252525;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent: #4a9eff;
+            --accent-hover: #3a8eef;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background-color: var(--bg-secondary) !important;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+        .navbar-brand {
+            color: var(--text-primary) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            color: var(--text-secondary) !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent) !important;
+        }
+        
+        /* === CONTENU === */
+        .main-content { padding: 4rem 0; }
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        /* === COMPTEUR === */
+        .events-counter {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        .events-counter span {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        
+        /* === CARTE === */
+        .event-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            gap: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        .event-card:nth-child(1) { animation-delay: 0.05s; }
+        .event-card:nth-child(2) { animation-delay: 0.12s; }
+        .event-card:nth-child(3) { animation-delay: 0.19s; }
+        .event-card:nth-child(4) { animation-delay: 0.26s; }
+        .event-card:nth-child(5) { animation-delay: 0.33s; }
+        .event-card:nth-child(6) { animation-delay: 0.40s; }
+        .event-card:nth-child(7) { animation-delay: 0.47s; }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        /* === DATE BOX === */
+        .event-date-box {
+            background-color: var(--accent);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            min-width: 100px;
+            height: fit-content;
+        }
+        .event-date-box .day   { font-size: 2rem;  font-weight: bold; color: white; }
+        .event-date-box .month { font-size: 1rem;  color: white; text-transform: uppercase; }
+        .event-date-box .year  { font-size: 0.9rem; color: white; }
+
+        /* === CONTENU CARTE === */
+        .event-content h3 {
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+        .event-content .event-type {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+        .event-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        .event-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .event-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        /* === BADGE TYPE === */
+        .badge-type {
+            display: inline-block;
+            background-color: rgba(74, 158, 255, 0.12);
+            color: var(--accent);
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            border-radius: 20px;
+            padding: 0.2rem 0.85rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.8rem;
+        }
+
+        /* === ENCADRÉ APPRENTISSAGES === */
+        .learning-box {
+            background-color: rgba(74, 158, 255, 0.06);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            padding: 0.75rem 1rem;
+            margin-top: 0.8rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .learning-box strong { color: var(--text-primary); }
+
+        /* === FOOTER === */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid #333;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .event-card { flex-direction: column; }
+            .event-date-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mon Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formation.html">Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Expérience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="competences.html">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tableau-synthese.html">Synthèse</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="evenement.html">Événements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="benevolat.html">Bénévolat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ctf.html">CTF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Événements & Participations</h1>
+            <div class="events-counter">
+                <span>7</span> événements et participations
+            </div>
+
+            <!-- Événement 1 — Déc 2025 -->
+            <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">30</div>
+                    <div class="month">Déc</div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="event-content">
+                    <h3>IA : Répondre aux craintes d'un "risque existentiel"</h3>
+                    <span class="badge-type">🤖 Meetup · Intelligence Artificielle</span>
+                    <div class="event-type">📍 Pub Saint-Michel — 19 Quai Saint-Michel, Paris 5e</div>
+                    <p>
+                        J'ai assisté à un Meetup sur les risques liés à l'Intelligence Artificielle et sur la manière dont on peut y répondre.
+                    </p>
+                    <div class="learning-box">
+                        <strong>Ce que j'en ai retiré :</strong> Une meilleure compréhension des enjeux éthiques et des risques systémiques liés à l'IA, avec des pistes concrètes pour y faire face.
+                    </div>
+                    <br>
+                    <a href="https://www.linkedin.com/posts/activity-7411861584819687424-x_KI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEkkf0BrK_B1wIuj4sNNOxADDujiyh_K-4" class="event-link" target="_blank">🔗 Plus d'informations</a>
+                </div>
+            </div>
+
+            <!-- Événement 2 — Déc 2025 -->
+            <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">10</div>
+                    <div class="month">Déc</div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="event-content">
+                    <h3>Open Source Experience</h3>
+                    <span class="badge-type">🐧 Salon · Open Source</span>
+                    <div class="event-type">📍 Porte de la Villette — Paris</div>
+                    <p>
+                        J'ai pu échanger avec de nombreux acteurs du secteur : RedHat, Zextras, HATHOR DS, IONOS, OUTSCALE et bien d'autres entreprises présentes sur place.
+                        Une expérience enrichissante, pleine de découvertes et de discussions passionnantes autour des technologies open source.
+                    </p>
+                    <div class="learning-box">
+                        <strong>Ce que j'en ai retiré :</strong> Une vision concrète de l'écosystème open source professionnel, des échanges avec des experts et une meilleure connaissance des solutions d'infrastructure actuelles.
+                    </div>
+                    <br>
+                    <a href="https://www.linkedin.com/posts/activity-7404571631605424130-KJ7U?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEkkf0BrK_B1wIuj4sNNOxADDujiyh_K-4" class="event-link" target="_blank">🔗 Voir le post LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Événement 3 — Nov 2025 -->
+            <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">25</div>
+                    <div class="month">Nov</div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="event-content">
+                    <h3>Zero CVEs in Open Source</h3>
+                    <span class="badge-type">🔐 Conférence · Cybersécurité</span>
+                    <div class="event-type">📍 Criteo — 32 Rue Blanche, Paris</div>
+                    <p>
+                        Grâce à Chainguard, j'ai pu comprendre l'importance de limiter l'installation par défaut des paquets non utilisés : le nombre de CVE était extrêmement réduit sur une image beaucoup plus légère.
+                    </p>
+                    <div class="learning-box">
+                        <strong>Ce que j'en ai retiré :</strong> L'approche "minimal by default" pour sécuriser les images conteneurs, en réduisant la surface d'attaque dès la construction de l'environnement.
+                    </div>
+                    <br>
+                    <a href="https://www.linkedin.com/posts/activity-7399175357230391296-L19z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEkkf0BrK_B1wIuj4sNNOxADDujiyh_K-4" class="event-link" target="_blank">🔗 Lien de l'événement</a>
+                </div>
+            </div>
+
+            <!-- Événement 4 — Oct 2025 -->
+            <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">Oct</div>
+                    <div class="month">2025</div>
+                    <div class="year">&nbsp;</div>
+                </div>
+                <div class="event-content">
+                    <h3>Conférence dédiée à l'Intelligence Artificielle</h3>
+                    <span class="badge-type">🤖 Conférence · Intelligence Artificielle</span>
+                    <div class="event-type">📍 ECE École d'Ingénieurs — Paris</div>
+                    <p>
+                        Participation à une conférence centrée sur les applications concrètes et les perspectives de l'Intelligence Artificielle dans les métiers du numérique et de l'ingénierie.
+                    </p>
+                    <div class="learning-box">
+                        <strong>Ce que j'en ai retiré :</strong> Une vue d'ensemble des usages actuels de l'IA dans l'industrie, et des réflexions sur son intégration dans les futurs métiers de l'informatique.
+                    </div>
+                    <br>
+                    <a href="https://www.linkedin.com/posts/activity-7391932455651393536-_LKC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEkkf0BrK_B1wIuj4sNNOxADDujiyh_K-4" class="event-link" target="_blank">🔗 Voir le post LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Événement 5 — Sep 2025 -->
+            <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">Sep</div>
+                    <div class="month">2025</div>
+                    <div class="year">&nbsp;</div>
+                </div>
+                <div class="event-content">
+                    <h3>Développement des data centers : entre attractivité et responsabilité</h3>
+                    <span class="badge-type">🏙️ Table ronde · Infrastructure & RSE</span>
+                    <div class="event-type">📍 Mairie de Paris — Paris</div>
+                    <p>
+                        Table ronde autour des enjeux liés à l'essor des data centers en France : attractivité économique, consommation énergétique et responsabilité environnementale.
+                    </p>
+                    <div class="learning-box">
+                        <strong>Ce que j'en ai retiré :</strong> Une meilleure compréhension des tensions entre développement des infrastructures numériques et contraintes écologiques, avec des perspectives sur leur gouvernance.
+                    </div>
+                    <br>
+                    <a href="https://www.linkedin.com/posts/activity-7386862232208564224-HCxb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEkkf0BrK_B1wIuj4sNNOxADDujiyh_K-4" class="event-link" target="_blank">🔗 Voir le post LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Événement 6 — Sep 2025 -->
+            <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">Sep</div>
+                    <div class="month">2025</div>
+                    <div class="year">&nbsp;</div>
+                </div>
+                <div class="event-content">
+                    <h3>Table ronde sur les enjeux de la souveraineté numérique européenne</h3>
+                    <span class="badge-type">🌍 Table ronde · Souveraineté Numérique</span>
+                    <div class="event-type">📍 Sciences Po Paris — Paris</div>
+                    <p>
+                        Participation à une table ronde organisée à Sciences Po Paris sur les défis de la souveraineté numérique en Europe : dépendance aux GAFAM, régulation, cloud souverain et alternatives européennes.
+                    </p>
+                    <div class="learning-box">
+                        <strong>Ce que j'en ai retiré :</strong> Une vision plus large des enjeux géopolitiques du numérique et de l'importance des initiatives européennes comme GAIA-X pour une infrastructure indépendante.
+                    </div>
+                    <br>
+                    <a href="https://www.linkedin.com/posts/activity-7386118395827761152-1urC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEkkf0BrK_B1wIuj4sNNOxADDujiyh_K-4" class="event-link" target="_blank">🔗 Voir le post LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Événement 7 — After-work Turgot -->
+            <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">–</div>
+                    <div class="month">2024</div>
+                    <div class="year">&nbsp;</div>
+                </div>
+                <div class="event-content">
+                    <h3>After-work BTS SIO</h3>
+                    <span class="badge-type">🎉 Événement · Vie étudiante</span>
+                    <div class="event-type">📍 Lycée Turgot — Paris</div>
+                    <p>
+                        Participation à un after-work organisé par le lycée Turgot dans le cadre de la vie étudiante BTS SIO. Échanges entre étudiants, professeurs et professionnels du secteur.
+                    </p>
+                    <div class="learning-box">
+                        <strong>Ce que j'en ai retiré :</strong> Renforcement du réseau étudiant et professionnel, partage d'expériences et découverte de parcours de professionnels du numérique.
+                    </div>
+                    <br>
+                    <a href="https://www.linkedin.com/in/waya-c-451022266/recent-activity/all/" class="event-link" target="_blank">🔗 Voir l'activité LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Copier ce bloc pour ajouter d'autres événements -->
+            <!--
+            <div class="event-card">
+                <div class="event-date-box">
+                    <div class="day">JJ</div>
+                    <div class="month">Mois</div>
+                    <div class="year">AAAA</div>
+                </div>
+                <div class="event-content">
+                    <h3>Titre de l'événement</h3>
+                    <span class="badge-type">🔖 Catégorie · Type</span>
+                    <div class="event-type">📍 Lieu</div>
+                    <p>Description...</p>
+                    <div class="learning-box"><strong>Ce que j'en ai retiré :</strong> ...</div>
+                    <br>
+                    <a href="#" class="event-link" target="_blank">🔗 Lien</a>
+                </div>
+            </div>
+            -->
+
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Portfolio BTS SIO | Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

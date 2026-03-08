@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Expérience</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS personnalisé -->
+    <style>
+        /* === VARIABLES DE COULEURS === */
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #252525;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent: #4a9eff;
+            --accent-hover: #3a8eef;
+        }
+        
+        /* === STYLES GÉNÉRAUX === */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        /* === NAVIGATION === */
+        .navbar {
+            background-color: var(--bg-secondary) !important;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            color: var(--text-primary) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary) !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent) !important;
+        }
+        
+        /* === CONTENU PRINCIPAL === */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        /* === CARTE D'EXPÉRIENCE === */
+        .experience-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        
+        .experience-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-card .company {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-card .period {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-card ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .experience-card ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .badge-custom {
+            background-color: var(--bg-secondary);
+            color: var(--accent);
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* === FOOTER === */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid #333;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- === BARRE DE NAVIGATION === -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mon Portfolio</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formation.html">Formation</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="experience.html">Expérience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="competences.html">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tableau-synthese.html">Synthèse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="evenement.html">Événements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="benevolat.html">Bénévolat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ctf.html">CTF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- === CONTENU PRINCIPAL === -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Expériences Professionnelles</h1>
+            
+            <!-- Expérience 1 : Stage -->
+            <div class="experience-card">
+                <h3>💼 Stage - Technicien de Support Informatique</h3>
+                <div class="company">Groupe Hospitalier Paul Guiraud</div>
+                <div class="period">📅 Novembre 2024 - Décembre 2024 | Villejuif</div>
+                
+                <p>
+                    Support informatique niveaux 1 et 2 pour un environnement hospitalier multi-sites.
+                    Gestion des incidents matériels et logiciels, déploiement de postes et assistance aux utilisateurs, notamment sur les applications médicales (DMP, SIH).
+                    Participation à la gestion de la téléphonie IP et du réseau au sein d’une équipe de 7 techniciens.
+                    Contribution à la continuité du service informatique critique 24/7.
+                </p>
+                <!--
+                <p><strong>Missions principales :</strong></p>
+                <ul>
+                    <li>Développement d'une application web/mobile en [langage/framework]</li>
+                    <li>Maintenance et mise à jour du système d'information</li>
+                    <li>Support technique aux utilisateurs</li>
+                    <li>Rédaction de documentation technique</li>
+                </ul>
+                -->
+                <p><strong>Technologies utilisées :</strong></p>
+                <div>
+                    <span class="badge-custom">GLPI</span>
+                    <span class="badge-custom">Micrsoft Azure</span>
+                    <span class="badge-custom">Active Directory</span>
+                    <!-- Ajoute tes propres technologies -->
+                </div>
+            </div>
+            
+            <!-- Expérience 2 : Job étudiant / autre stage -->
+            <div class="experience-card">
+                <h3>💼 CDD - Agent technique polyvalent</h3>
+                <div class="company">GTPC (GROUPEMENT THERMIQUE DU PALAIS DES CONGRES)</div>
+                <div class="period">📅 Juillet 2024 - Août 2024 | Porte Maillot</div>
+                
+                <p>
+                    Mise en œuvre des moyens propres à faciliter ou développer l'activité économique de ses membres et plus particulièrement la résiliation et l'exploitation des ouvrages de production de chaleur, froid et d'énergie électrique dans l'enceinte du centre international de Paris.
+                </p>
+                <!--
+                <p><strong>Missions principales :</strong></p>
+                <ul>
+                    <li>Description de la mission 1</li>
+                    <li>Description de la mission 2</li>
+                    <li>Description de la mission 3</li>
+                </ul>
+                
+                <p><strong>Compétences développées :</strong></p>
+                <ul>
+                    <li>Compétence technique 1</li>
+                    <li>Compétence technique 2</li>
+                    <li>Soft skill (communication, travail d'équipe...)</li>
+                </ul>
+                -->
+            </div>
+
+            <!-- Expérience 3 : Job étudiant / autre stage -->
+            <div class="experience-card">
+                <h3>💼 Stage - Agent technique polyvalent</h3>
+                <div class="company">GTPC (GROUPEMENT THERMIQUE DU PALAIS DES CONGRES)</div>
+                <div class="period">📅 Juin 2024 - Juillet 2024 | Porte Maillot</div>
+                <p>
+                    Mise en œuvre des moyens propres à faciliter ou développer l'activité économique de ses membres et plus particulièrement la résiliation et l'exploitation des ouvrages de production de chaleur, froid et d'énergie électrique dans l'enceinte du centre international de Paris.
+                </p>
+                <!--
+                <p><strong>Missions :</strong></p>
+                <ul>
+                    <li>Mission 1</li>
+                    <li>Mission 2</li>
+                </ul>
+                -->
+            </div>
+
+            <!-- Expérience 4 : Job étudiant / autre stage -->
+            <div class="experience-card">
+                <h3>💼 Stage - Agent technique polyvalent</h3>
+                <div class="company">GTPC (GROUPEMENT THERMIQUE DU PALAIS DES CONGRES)</div>
+                <div class="period">📅 Janvier 2024 - Février 2024 | Porte Maillot</div>
+                <p>
+                    Mise en œuvre des moyens propres à faciliter ou développer l'activité économique de ses membres et plus particulièrement la résiliation et l'exploitation des ouvrages de production de chaleur, froid et d'énergie électrique dans l'enceinte du centre international de Paris.
+                </p>
+                <!--
+                <p><strong>Missions :</strong></p>
+                <ul>
+                    <li>Mission 1</li>
+                    <li>Mission 2</li>
+                </ul>
+                -->
+            </div>
+
+            <!-- Expérience 5 : Job étudiant / autre stage -->
+            <div class="experience-card">
+                <h3>💼 Stage - Technicien informatique</h3>
+                <div class="company">Le Pink Concept</div>
+                <div class="period">📅 Mars 2023 - Avril 2023 | Charenton-le-Pont</div>
+                <p>
+                    Offre des conseils et des services informatiques pour les particuliers et les professionnels, en mettant l'accent sur une approche féminine.
+                    Donne des réponses aux questions informatiques.                
+                </p>
+                <!--
+                <p><strong>Missions :</strong></p>
+                <ul>
+                    <li>Mission 1</li>
+                    <li>Mission 2</li>
+                </ul>
+                -->
+            </div>
+            
+            <!-- Expérience 3 (optionnel) -->
+            <!-- Tu peux copier-coller ce bloc pour ajouter d'autres expériences -->
+            <!--
+            <div class="experience-card">
+                <h3>💼 Titre du poste</h3>
+                <div class="company">Nom de l'entreprise</div>
+                <div class="period">📅 Dates | Ville</div>
+                <p>Description...</p>
+                <p><strong>Missions :</strong></p>
+                <ul>
+                    <li>Mission 1</li>
+                    <li>Mission 2</li>
+                </ul>
+            </div>
+            -->
+            
+        </div>
+    </main>
+    
+    <!-- === FOOTER === -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Portfolio BTS SIO | Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript personnalisé -->
+    <script>
+        // JavaScript pour animations ou interactions
+    </script>
+    
+</body>
+</html>
