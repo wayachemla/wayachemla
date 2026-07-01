@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube - Waya CHEMLA</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        /* === VARIABLES DE COULEURS (identiques à index.html) === */
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #252525;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent: #4a9eff;
+            --accent-hover: #3a8eef;
+        }
+
+        /* === STYLES GÉNÉRAUX (identiques à index.html) === */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* === NAVIGATION (identique à index.html) === */
+        .navbar {
+            background-color: var(--bg-secondary) !important;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            color: var(--text-primary) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary) !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent) !important;
+        }
+
+        /* === CONTENU PRINCIPAL === */
+        .main-content {
+            padding: 3rem 0 4rem 0;
+        }
+
+        .page-title {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .page-intro {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+
+        /* === CARTE VIDÉO ===
+           Réutilise le style visuel des cartes déjà présentes
+           sur le site (fond, bordure, radius identiques à unified-card)
+        */
+        .video-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid #333;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Zone miniature : à remplir plus tard avec une vraie image */
+        .video-thumbnail {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .video-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .video-body h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .video-body p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* Bouton réutilisant le style btn-custom déjà présent sur le site */
+        .btn-custom {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            align-self: flex-start;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--accent-hover);
+            color: white;
+        }
+
+        /* === FOOTER (identique à index.html) === */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid #333;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- === BARRE DE NAVIGATION (identique aux autres pages, lien YouTube ajouté et actif) === -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Mon Portfolio</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="parcours.html">Parcours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="competences-projets-ctf.html">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+                    <li class="nav-item"><a class="nav-link" href="evenement.html">Événements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentation.html">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fansub.html">Fansub</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="youtube.html">YouTube</a></li>
+                    <li class="nav-item"><a class="nav-link" href="attestation.html">Attestation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- === SECTION PRINCIPALE === -->
+    <main class="main-content">
+        <div class="container">
+
+            <h1 class="page-title">Mes vidéos YouTube</h1>
+            <p class="page-intro">
+                Cette page regroupe des vidéos réalisées pour démontrer mes compétences techniques en informatique
+                (réseau, système, cybersécurité). Chaque vidéo est accompagnée d'une courte description et d'un
+                lien direct vers YouTube.
+            </p>
+
+            <!-- Grille de cartes vidéo -->
+            <div class="row">
+
+                <!-- Vidéo 1 : À remplacer -->
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            Miniature à ajouter
+                        </div>
+                        <div class="video-body">
+                            <h3>Titre de la vidéo 1 - À remplacer</h3>
+                            <p>Courte description de la vidéo à remplacer. Exemple : présentation d'une configuration réseau ou d'un TP réalisé en cours.</p>
+                            <a href="#" class="btn-custom" target="_blank" rel="noopener">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 2 : À remplacer -->
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            Miniature à ajouter
+                        </div>
+                        <div class="video-body">
+                            <h3>Titre de la vidéo 2 - À remplacer</h3>
+                            <p>Courte description de la vidéo à remplacer. Exemple : démonstration d'une installation ou d'une résolution de problème technique.</p>
+                            <a href="#" class="btn-custom" target="_blank" rel="noopener">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 3 : À remplacer -->
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            Miniature à ajouter
+                        </div>
+                        <div class="video-body">
+                            <h3>Titre de la vidéo 3 - À remplacer</h3>
+                            <p>Courte description de la vidéo à remplacer. Exemple : tutoriel ou write-up d'un CTF réalisé.</p>
+                            <a href="#" class="btn-custom" target="_blank" rel="noopener">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Pour ajouter une nouvelle vidéo : copier un bloc "col-md-4 > video-card" et modifier le contenu -->
+
+        </div>
+    </main>
+
+    <!-- === FOOTER (identique aux autres pages) === -->
+    <footer>
+        <div class="container">
+            <p>© 2025 - Portfolio BTS SIO | Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</body>
+</html>
