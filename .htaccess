@@ -21,7 +21,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     # CSP Validée A+ Mozilla
     
     # CSP Validée avec votre nouveau script attestation
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'sha256-4Yeeu8S693K8O2w8v83qQcQzE2S6P/D2ZfC9eHuwkJM=' 'sha256-DdB/iS8N+X2eE3W5+K3/u4/T3W/K2M0927L7Ovu7R+U=' 'sha256-Z+A7HwY2W8P8T7W4M2S5K9v8fD5d7D6eY8Z3vD8M3S0=' 'sha256-WCiaDN47gkQB8u9PahfOHEVXOMdl0wZ0d2oFnEkHapI=' 'sha256-3uWlIw52dxvOXz4GqJIN5Kdo6tQjFVD00fEvOY9WPjM='; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://www.credly.com https://i.ytimg.com; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'sha256-4Yeeu8S693K8O2w8v83qQcQzE2S6P/D2ZfC9eHuwkJM=' 'sha256-DdB/iS8N+X2eE3W5+K3/u4/T3W/K2M0927L7Ovu7R+U=' 'sha256-Z+A7HwY2W8P8T7W4M2S5K9v8fD5d7D6eY8Z3vD8M3S0=' 'sha256-WCiaDN47gkQB8u9PahfOHEVXOMdl0wZ0d2oFnEkHapI=' 'sha256-3uWlIw52dxvOXz4GqJIN5Kdo6tQjFVD00fEvOY9WPjM='; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://www.credly.com https://i.ytimg.com https://lh3.googleusercontent.com; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
 
     # FIX FINAL CACHE-CONTROL POUR OWASP ZAP (Force la désactivation totale du cache)
     Header unset Cache-Control
