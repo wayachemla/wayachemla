@@ -727,7 +727,7 @@
             <h2 class="page-title">Les Projets Réalisés</h2>
 
             <div class="project-card">
-                <div class="project-header" onclick="toggleProject('project7')">
+                <div class="project-header" data-project-toggle="project7" role="button" tabindex="0">
                     <div class="project-header-content">
                         <h3>Projet HoneyPot OpenCanary</h3>
                         <p class="project-short-desc">Dans le cadre de ma formation BTS Services Informatiques aux Organisations (SIO) en première année, j’ai réalisé un projet portant sur la mise en place d’un honeypot avec OpenCanary dans un environnement Linux Debian.</p>
@@ -743,7 +743,7 @@
 
             <!-- PROJET 1 : Virtualisation Proxmox +  -->
             <div class="project-card">
-                <div class="project-header" onclick="toggleProject('project1')">
+                <div class="project-header" data-project-toggle="project1" role="button" tabindex="0">
                     <div class="project-header-content">
                         <h3>Projet Proxmox</h3>
                         <p class="project-short-desc">Déploiement d'un environnement virtualisé sécurisé avec Proxmox au lycée Turgot.</p>
@@ -793,7 +793,7 @@
 
             <!-- PROJET 2 : Hardening -->
             <div class="project-card">
-                <div class="project-header" onclick="toggleProject('project2')">
+                <div class="project-header" data-project-toggle="project2" role="button" tabindex="0">
                     <div class="project-header-content">
                         <h3>Projet de Hardening (Durcissement)</h3>
                         <p class="project-short-desc">Durcissement d'un poste de travail dans le cadre de la formation BTS SIO au lycée Turgot.</p>
@@ -845,7 +845,7 @@
 
             <!-- PROJET 7 : AfterWork -->
             <div class="project-card">
-                <div class="project-header" onclick="toggleProject('project7')">
+                <div class="project-header" data-project-toggle="project7" role="button" tabindex="0">
                     <div class="project-header-content">
                         <h3>Montage vidéo – Soirée Afterwork BTS SIO (Lycée Turgot)</h3>
                         <p class="project-short-desc">Montage vidéo – Soirée Afterwork BTS SIO (Lycée Turgot).</p>
@@ -859,7 +859,7 @@
             </div>
             <!-- PROJET 7 : AfterWork -->
             <div class="project-card">
-                <div class="project-header" onclick="toggleProject('project7')">
+                <div class="project-header" data-project-toggle="project7" role="button" tabindex="0">
                     <div class="project-header-content">
                         <h3>Organisation d’un afterwork étudiant – BTS SIO (Lycée Turgot)</h3>
                         <p class="project-short-desc">Dans le cadre du BTS SIO au lycée Turgot, j’ai participé à l’organisation d’un afterwork étudiant, entièrement conçu et mis en place par les étudiants.</p>
@@ -873,7 +873,7 @@
             </div>
             <!-- PROJET 8 : Site web Evangelion -->
             <div class="project-card">
-                <div class="project-header" onclick="toggleProject('project8')">
+                <div class="project-header" data-project-toggle="project8" role="button" tabindex="0">
                     <div class="project-header-content">
                         <h3>Réaliser, héberger, maintenir un site web sur internet et intranet</h3>
                         <p class="project-short-desc">Réaliser, héberger, maintenir un site web sur internet et intranet.</p>
@@ -903,7 +903,7 @@
             </div>
                  <!-- PROJET 4 : Serveur IIS -->
             <div class="project-card">
-                <div class="project-header" onclick="toggleProject('project4')">
+                <div class="project-header" data-project-toggle="project4" role="button" tabindex="0">
                     <div class="project-header-content">
                         <h3>Mettre en place un serveur IIS</h3>
                         <p class="project-short-desc">Installation et configuration d'un serveur web IIS — lycée Christophe Colomb.</p>
@@ -920,7 +920,7 @@
             </div>
 
             <div class="project-card">
-                <div class="project-header" onclick="toggleProject('project4')">
+                <div class="project-header" data-project-toggle="project4" role="button" tabindex="0">
                     <div class="project-header-content">
                         <h3>Rapport — Projet Chef-d'œuvre</h3>
                         <p class="project-short-desc">Dans le cadre de mon projet de chef-d'œuvre en Bac Pro SN RISC, j’ai participé à un projet de domotisation d’une maison ancienne avec un groupe de 4 élèves.</p>
@@ -1193,12 +1193,35 @@
 
     <script>
         // === JS PROJETS : ouvrir / fermer les détails ===
-        function toggleProject(projectId) {
+        function toggleProject(headerEl) {
+            const projectId = headerEl.getAttribute('data-project-toggle');
             const details = document.getElementById('details-' + projectId);
             const icon = document.getElementById('icon-' + projectId);
+
+            // Sécurité : certains projets n'ont pas (encore) de bloc de détails associé
+            if (!details) {
+                return;
+            }
             details.classList.toggle('active');
-            icon.classList.toggle('rotated');
+            if (icon) {
+                icon.classList.toggle('rotated');
+            }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.project-header[data-project-toggle]').forEach(function (header) {
+                header.addEventListener('click', function () {
+                    toggleProject(header);
+                });
+                // Accessibilité clavier (Entrée / Espace) puisque ce ne sont pas de vrais <button>
+                header.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleProject(header);
+                    }
+                });
+            });
+        });
 
         // === JS COMPÉTENCES : animer les barres de progression ===
         document.addEventListener('DOMContentLoaded', function () {
