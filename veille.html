@@ -145,13 +145,23 @@
             <!-- Onglets de navigation -->
             <ul class="nav nav-tabs mb-4" id="veilleTabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-virt" type="button" role="tab">
-                        Virtualisation &amp; Cloud
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-reseau" type="button" role="tab">
+                        Réseau/Cloud/Système/Infrastructure 
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-reseau" type="button" role="tab">
-                        Réseau Informatique
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-ia" type="button" role="tab">
+                        IA
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-vulnerabilite" type="button" role="tab">
+                        Vulnérabilité
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-generale" type="button" role="tab">
+                        Veille générale sur IT
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -163,11 +173,40 @@
 
             <div class="tab-content">
 
-            <!-- ===== ONGLET 1 : Virtualisation & Cloud ===== -->
-            <div class="tab-pane fade show active" id="tab-virt" role="tabpanel">
+            <!-- ===== ONGLET 1 :  &  ===== -->
+            <div class="tab-pane fade show active" id="tab-reseau" role="tabpanel">
 
 
             <!-- Article 1 -->
+            <div class="article-card">
+                <div class="article-date">23 juin 2026</div>
+                <h3>Les entreprises plongent leur IA dans des data lakehouses</h3>
+                <div><span class="tag">IA</span><span class="tag">Données</span><span class="tag">Infrastructure</span></div>
+                <div class="article-source">Source : CIO-Online</div>
+                <p>
+                    Les admins système pourraient devoir gérer des plateformes de données plus centralisées
+                    et mieux contrôlées, avec un renforcement du contrôle d'accès, de l'audit et de
+                    l'intégration entre systèmes. L'évolution des usages de l'IA implique une implication
+                    croissante des admins système dans les environnements de données, afin qu'ils restent
+                    fiables, accessibles et sécurisés pour des traitements automatisés.
+                </p>
+                <a href="https://www.cio-online.com/actualites/lire-les-entreprises-plongent-leur-ia-dans-des-data-lakehouses-17112.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="article-card">
+                <div class="article-date">10 juin 2026</div>
+                <h3>IA en cloud : pourquoi il est nécessaire d'optimiser le réseau</h3>
+                <div><span class="tag">IA</span><span class="tag">Cloud</span><span class="tag">Réseau</span></div>
+                <div class="article-source">Source : LeMagIT</div>
+                <p>
+                    Selon Chris Tozzi, un projet IA en cloud peut mener à des pertes financières si la mise
+                    en place du réseau n'est pas optimale.
+                </p>
+                <a href="https://www.lemagit.fr/conseil/IA-en-cloud-pourquoi-il-est-necessaire-doptimiser-le-reseau" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 3 -->
             <div class="article-card">
                 <div class="article-date">07 janvier 2026</div>
                 <h3>AMD introduces Ryzen AI Embedded processors</h3>
@@ -706,6 +745,21 @@
             <!-- Article 38 -->
             <div class="article-card">
                 <div class="article-date">19 septembre 2025</div>
+                <h3>Les failles de Chaos-Mesh menacent les clusters Kubernetes</h3>
+                <div><span class="tag">Cybersécurité</span><span class="tag">Kubernetes</span><span class="tag">Vulnérabilités</span></div>
+                <div class="article-source">Source : Le Monde Informatique (voir aussi Cybersecurite.com et B2B Cyber Security)</div>
+                <p>
+                    Des chercheurs ont trouvé plusieurs vulnérabilités critiques dans Chaos Mesh, une
+                    plateforme qui simule des pannes et teste la résilience des clusters Kubernetes.
+                    D'après l'analyse publiée, ces failles peuvent permettre d'exécuter des commandes
+                    sur le système, et même de prendre le contrôle du cluster.
+                </p>
+                <a href="https://www.lemondeinformatique.fr/actualites/lire-les-failles-de-chaos-mesh-menacent-les-clusters-kubernetes-97915.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 39 -->
+            <div class="article-card">
+                <div class="article-date">19 septembre 2025</div>
                 <h3>Quatre vulnérabilités dans une plateforme de simulation de pannes permettant l'injection de commandes OS</h3>
                 <div><span class="tag">Cybersécurité</span><span class="tag">Vulnérabilités</span><span class="tag">Kubernetes</span></div>
                 <div class="article-source">Source : Le Monde Informatique</div>
@@ -717,8 +771,7 @@
                 <a href="https://www.lemondeinformatique.fr/actualites/lire-pajemploi-pirate-1-2-million-de-donnees-de-salaries-volees-98511.html" class="article-link" target="_blank">Lire l'article complet</a>
             </div>
 
-            <!-- Article 39 -->
-            <!-- Article 1 -->
+            <!-- Article 40 -->
             <div class="article-card">
                 <div class="article-date">11 septembre 2025</div>
                 <h3>Plus d'un tiers des workloads VMware migreront d'ici trois ans</h3>
@@ -749,32 +802,492 @@
 
             </div><!-- fin onglet 1 -->
 
-            <!-- ===== ONGLET 2 : Réseau Informatique ===== -->
-            <div class="tab-pane fade" id="tab-reseau" role="tabpanel">
+            <!-- ===== ONGLET 2 : IA ===== -->
+            <div class="tab-pane fade" id="tab-ia" role="tabpanel">
 
-                <div class="article-card" style="background-color: var(--bg-secondary);">
-                    <h3>Veille — Réseau Informatique</h3>
-                    <p>Cette section regroupe ma veille sur les réseaux informatiques en entreprise, dans la fonction publique et sur la sécurité des réseaux.</p>
-                    <ul style="color: var(--text-secondary); line-height: 1.8;">
-                        <li>Réseaux en entreprise (LAN, WAN, VPN, SD-WAN…)</li>
-                        <li>Réseaux dans la fonction publique (RIE, réseaux interministériels…)</li>
-                        <li>Sécurité des réseaux (pare-feu, détection d'intrusion, Zero Trust…)</li>
-                    </ul>
-                    <p>Les articles seront ajoutés au fil de mes recherches.</p>
-                </div>
+            <!-- Article 1 -->
+            <div class="article-card">
+                <div class="article-date">29 juin 2026</div>
+                <h3>Google DeepMind publie un rapport sur le passage de l'AGI vers l'ASI</h3>
+                <div><span class="tag">IA</span><span class="tag">AGI</span><span class="tag">Recherche</span></div>
+                <div class="article-source">Source : Non précisée dans les notes</div>
+                <p>
+                    Google DeepMind a publié un rapport sur le passage de l'intelligence artificielle générale
+                    (AGI) vers la superintelligence artificielle (ASI). L'AGI est un système au niveau d'un
+                    humain moyen, capable de raisonner, apprendre, planifier et s'adapter sur la plupart des
+                    tâches cognitives, tandis que l'ASI serait un système cognitif équivalent à celui de
+                    plusieurs grandes organisations humaines entières. Pour passer de l'AGI à l'ASI, 4 chemins
+                    techniques sont explorés : l'augmentation massive des ressources (scaling), la découverte
+                    de nouveaux algorithmes, l'auto-amélioration (l'IA conçoit ses propres IA suivantes) et
+                    l'intelligence collective multi-agent. L'ASI aurait toutefois des limites liées à des
+                    contraintes physiques comme l'énergie, la thermodynamique et la disponibilité des données.
+                    L'objectif visé serait l'accélération de la connaissance, l'auto-amélioration récursive et
+                    la résolution de problèmes complexes.
+                </p>
+            </div>
 
-                <!-- Ajouter les futurs articles réseau ici, en copiant le bloc ci-dessous :
-                <div class="article-card">
-                    <div class="article-date">[Date]</div>
-                    <h3>[Titre]</h3>
-                    <div><span class="tag">[Tag]</span></div>
-                    <div class="article-source">Source : [Source]</div>
-                    <p>[Résumé]</p>
-                    <a href="[lien]" class="article-link" target="_blank">Lire l'article complet</a>
-                </div>
-                -->
+            <!-- Article 2 -->
+            <div class="article-card">
+                <div class="article-date">27 juin 2026</div>
+                <h3>GLM 5.2, le nouveau modèle qui rendrait Claude Code obsolète</h3>
+                <div><span class="tag">IA</span><span class="tag">Open Source</span><span class="tag">Développement</span></div>
+                <div class="article-source">Source : YouTube</div>
+                <p>
+                    GLM 5.2 est un nouveau modèle gratuit et open source, sorti après l'interdiction du modèle
+                    Claude Fable, publié par Zip AI sous licence MIT (sans restriction). Selon des benchmarks,
+                    ses performances seraient comparables à des modèles fermés comme GPT-5.5, Gemini ou Claude
+                    Opus 4.8. Le modèle montre une efficacité importante grâce au logiciel Zcode, pour des
+                    tâches comme la création de sites vitrines via capture d'écran, le développement
+                    d'applications de gestion, et la programmation de jeux vidéo en 3D.
+                </p>
+                <a href="https://www.youtube.com/watch?v=67LK2wvhYTU" class="article-link" target="_blank">Voir la vidéo</a>
+            </div>
 
-            </div><!-- fin onglet 2 -->
+            <!-- Article 3 -->
+            <div class="article-card">
+                <div class="article-date">26 juin 2026</div>
+                <h3>Projet ANS de la Linux Foundation pour sécuriser les agents IA</h3>
+                <div><span class="tag">IA</span><span class="tag">Cybersécurité</span><span class="tag">Agents IA</span></div>
+                <div class="article-source">Source : Le Monde Informatique</div>
+                <p>
+                    La Linux Foundation dévoile un projet nommé ANS ("Agent Name Service Framework") pour
+                    sécuriser les agents IA. Il s'agit d'un standard ouvert qui étend le DNS afin de donner
+                    aux agents IA une identité vérifiable.
+                </p>
+                <a href="https://www.lemondeinformatique.fr/actualites/lire-un-projet-de-la-linux-foundation-vise-a-instaurer-une-confiance-de-type-dns-aux-agents-ia-100575.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="article-card">
+                <div class="article-date">26 juin 2026</div>
+                <h3>Bercy stoppe un test de l'IA chinoise Qwen (Alibaba)</h3>
+                <div><span class="tag">IA</span><span class="tag">Souveraineté numérique</span><span class="tag">Secteur public</span></div>
+                <div class="article-source">Source : Clubic</div>
+                <p>
+                    La Direction générale du Trésor a arrêté l'expérimentation de Qwen (Alibaba) le 23 juin,
+                    après avoir signalé que plusieurs réponses reçues par les utilisateurs seraient orientées
+                    sur des sujets liés à la Chine. Un modèle français de Mistral AI a été mis en place le
+                    lendemain.
+                </p>
+                <a href="https://www.clubic.com/actualite-618721-ia-chinoise-bercy-stoppe-un-test-apres-des-reponses-jugees-biaisees.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 5 -->
+            <div class="article-card">
+                <div class="article-date">25 juin 2026</div>
+                <h3>Dausos, le nouveau protocole VPN de Surfshark</h3>
+                <div><span class="tag">Cybersécurité</span><span class="tag">VPN</span><span class="tag">Chiffrement</span></div>
+                <div class="article-source">Source : Korben.info</div>
+                <p>
+                    Surfshark a créé Dausos, un nouveau protocole VPN destiné aux utilisateurs lambda. Il
+                    utilise le chiffrement AEGIS-256X2, présenté comme résistant aux ordinateurs quantiques, et
+                    serait 30 % plus rapide que les protocoles standards selon Surfshark. Il rendrait aussi
+                    plus difficile le blocage du VPN grâce à la randomisation des ports. Contrairement à la
+                    plupart des VPN du marché qui regroupent tous les utilisateurs dans un même tunnel chiffré,
+                    ce protocole crée un tunnel dédié à chaque utilisateur, ce qui permettrait moins
+                    d'interférences, moins d'expositions croisées et une meilleure performance.
+                </p>
+                <a href="https://korben.info/protocole-vpn-concu-pour-vous.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 6 -->
+            <div class="article-card">
+                <div class="article-date">25 juin 2026</div>
+                <h3>Microsoft explique comment l'IA les aide dans la lutte contre la cybercriminalité</h3>
+                <div><span class="tag">IA</span><span class="tag">Cybersécurité</span><span class="tag">Microsoft</span></div>
+                <div class="article-source">Source : Clubic</div>
+                <p>
+                    Microsoft explique que l'IA les aide dans la lutte contre la cybercriminalité. Le 24 juin,
+                    Microsoft a démantelé les infrastructures de StealC et d'Amadey, liées à 140 000
+                    ordinateurs infectés dans le monde, en neutralisant 200 serveurs de commande et de
+                    contrôle. StealC est un infostealer qui vole les mots de passe, les cookies et les
+                    portefeuilles crypto, tandis qu'Amadey est l'outil qui lui sert de porte d'entrée.
+                </p>
+                <a href="https://www.clubic.com/actualite-618523-microsoft-devoile-comment-l-ia-revolutionne-la-lutte-mondiale-contre-la-cybercriminalite.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 7 -->
+            <div class="article-card">
+                <div class="article-date">25 juin 2026</div>
+                <h3>Boogu Image 0.1, nouveau modèle open source de génération d'images</h3>
+                <div><span class="tag">IA</span><span class="tag">Open Source</span><span class="tag">Génération d'images</span></div>
+                <div class="article-source">Source : YouTube</div>
+                <p>
+                    Boogu Image 0.1 est une nouvelle famille d'IA open source de génération d'images. Il en
+                    existe une version base (génération d'image de base), une version edit et une version
+                    turbo. Boogu serait l'équivalent de Nano Banana, mais en open source.
+                </p>
+                <a href="https://www.youtube.com/watch?v=RlvbtjLXxx4" class="article-link" target="_blank">Voir la vidéo</a>
+            </div>
+
+            <!-- Article 8 -->
+            <div class="article-card">
+                <div class="article-date">25 juin 2026</div>
+                <h3>OpenAI Record and Replay, nouvelle fonctionnalité de Codex</h3>
+                <div><span class="tag">IA</span><span class="tag">OpenAI</span><span class="tag">Développement</span></div>
+                <div class="article-source">Source : YouTube</div>
+                <p>
+                    Cette nouvelle fonctionnalité de Codex, sortie le 18 juin, enregistre l'écran pendant
+                    qu'on effectue une tâche, quelle que soit cette tâche. GPT Codex analyse le processus
+                    complet et le transforme en compétence réutilisable qui peut ensuite l'exécuter à notre
+                    place les fois suivantes. Contrairement aux anciens logiciels qui enregistraient des
+                    coordonnées pixel sur l'écran (et cassaient tout si un bouton se déplaçait après une
+                    mise à jour), Codex comprend l'intention de chaque étape affichée à l'écran, et donc le
+                    but de chaque action, pas seulement la position pixel.
+                </p>
+                <a href="https://www.youtube.com/watch?v=RlvbtjLXxx4" class="article-link" target="_blank">Voir la vidéo</a>
+            </div>
+
+            <!-- Article 9 -->
+            <div class="article-card">
+                <div class="article-date">24 juin 2026</div>
+                <h3>GitHub submergé par l'IA, Microsoft contraint de faire appel à AWS</h3>
+                <div><span class="tag">IA</span><span class="tag">Infrastructure</span><span class="tag">GitHub</span></div>
+                <div class="article-source">Source : IT-Connect</div>
+                <p>
+                    GitHub est submergé par l'IA et Microsoft est obligé de faire appel à AWS. Actuellement,
+                    près de 4 % de tout le code présent sur les dépôts GitHub serait généré par Claude Code,
+                    soit plus de 135 000 commits. Pour remédier à ce problème, GitHub est obligé de louer du
+                    CPU chez son concurrent AWS. Le porte-parole de Microsoft indique que l'accord avec GitHub
+                    a été conclu, mais qu'avec la hausse du développement assisté par IA, l'infrastructure
+                    Microsoft est poussée à ses retranchements : l'IA progresserait plus vite que les
+                    infrastructures actuelles ne peuvent la supporter.
+                </p>
+                <a href="https://www.it-connect.fr/github-submerge-par-ia-microsoft-contraint-de-faire-appel-a-aws/" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 10 -->
+            <div class="article-card">
+                <div class="article-date">23 juin 2026</div>
+                <h3>L'IA Mythos d'Anthropic n'a pas piraté la NSA</h3>
+                <div><span class="tag">IA</span><span class="tag">Cybersécurité</span><span class="tag">Anthropic</span></div>
+                <div class="article-source">Source : Frandroid</div>
+                <p>
+                    L'IA Mythos d'Anthropic n'a pas piraté la NSA. Il s'agissait en réalité d'un test du
+                    11 juin, un exercice de red team autorisé où la NSA a lancé Mythos contre une copie de son
+                    propre environnement pour y chercher des failles. Il n'y a eu aucune intrusion extérieure,
+                    ni de système réel compromis.
+                </p>
+                <a href="https://www.frandroid.com/culture-tech/3153725_non-lia-mythos-danthropic-na-pas-pirate-la-nsa-voici-ce-qui-sest-vraiment-passe" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 11 -->
+            <div class="article-card">
+                <div class="article-date">23 juin 2026</div>
+                <h3>Le quantique et les datacenters IA</h3>
+                <div><span class="tag">IA</span><span class="tag">Quantique</span><span class="tag">Datacenters</span></div>
+                <div class="article-source">Source : « Le Quantique vient de Tuer les Data Centers IA (en 5 minutes) »</div>
+                <p>
+                    En 2026, 650 milliards de dollars devraient être déboursés par les grandes industries pour
+                    les datacenters IA, et d'ici 2030, 17 % de l'électricité américaine serait utilisée par
+                    ces datacenters. Le calcul quantique fonctionne différemment du calcul classique : il
+                    résout les calculs via différents chemins en même temps, ce qui le rend beaucoup plus
+                    performant pour certains problèmes spécifiques (comme l'annealing pour les problèmes
+                    d'optimisation, ou le "gate model", un ordinateur quantique plus puissant). Le quantique
+                    fonctionne déjà en industrie couplé à l'IA pour résoudre des problèmes concrets, mais il
+                    présente aussi des désavantages : une nécessité énorme en eau pour la fabrication des
+                    puces, et le recours à l'hélium-3, un isotope rare, pour refroidir les circuits qubits.
+                    Pour les datacenters classiques, l'obstacle de la thermodynamique (plus de calcul produit
+                    plus de chaleur) reste pour l'instant sans solution.
+                </p>
+            </div>
+
+            <!-- Article 12 -->
+            <div class="article-card">
+                <div class="article-date">23 juin 2026</div>
+                <h3>Anthropic automatise 95 % de ses requêtes analytiques internes via Claude</h3>
+                <div><span class="tag">IA</span><span class="tag">Anthropic</span><span class="tag">Automatisation</span></div>
+                <div class="article-source">Source : InformatiqueNews</div>
+                <p>
+                    Anthropic affirme que 95 % de ses requêtes analytiques internes via l'IA Claude sont
+                    automatisées.
+                </p>
+                <a href="https://www.informatiquenews.fr/analytique-en-libre-service-comment-anthropic-confie-95-de-ses-requetes-a-claude-112085" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 13 -->
+            <div class="article-card">
+                <div class="article-date">23 juin 2026</div>
+                <h3>Panne générale sur Claude</h3>
+                <div><span class="tag">IA</span><span class="tag">Anthropic</span><span class="tag">Panne</span></div>
+                <div class="article-source">Source : Clubic</div>
+                <p>
+                    Une panne générale sur l'IA Claude a privé les développeurs et professionnels du service
+                    Claude.ai le mardi après-midi. La panne a débuté à 14h19 UTC et a provoqué une
+                    interruption immédiate de l'IA Claude. Selon la page officielle d'Anthropic, il y a eu une
+                    défaillance importante touchant l'ensemble de l'écosystème (l'ensemble du matériel, du
+                    logiciel et des services interconnectés nécessaires à son fonctionnement).
+                </p>
+                <a href="https://www.clubic.com/actualite-618283-le-chat-claude-d-anthropic-subit-une-grosse-panne-ce-mardi-apres-midi-que-se-passe-t-il.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 14 -->
+            <div class="article-card">
+                <div class="article-date">23 juin 2026</div>
+                <h3>Panne sur ChatGPT (téléchargement de fichiers)</h3>
+                <div><span class="tag">IA</span><span class="tag">OpenAI</span><span class="tag">Panne</span></div>
+                <div class="article-source">Source : Frandroid</div>
+                <p>
+                    Panne sur ChatGPT : OpenAI signale un taux d'erreur élevé sur l'envoi et le téléchargement
+                    de documents, et indique enquêter sur les problèmes mentionnés. Ce n'est pas l'ensemble du
+                    service qui est touché : le chatbot continue de répondre normalement aux questions, mais
+                    personne ne peut télécharger de documents.
+                </p>
+                <a href="https://www.frandroid.com/culture-tech/intelligence-artificielle/3153201_panne-chatgpt-le-telechargement-des-fichiers-a-des-problemes-openai-a-lance-une-enquete" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 15 -->
+            <div class="article-card">
+                <div class="article-date">20 juin 2026</div>
+                <h3>Kimi K2.7, nouveau modèle spécialisé dans le coding</h3>
+                <div><span class="tag">IA</span><span class="tag">Open Source</span><span class="tag">Développement</span></div>
+                <div class="article-source">Source : « L'Amérique a banni Claude. La Chine vient de sortir mieux. »</div>
+                <p>
+                    Le nouveau modèle Kimi K2.7, sorti en juin, est spécialisé dans le coding. Il est capable
+                    d'écrire du code, de le corriger, mais surtout d'exécuter des tâches de programmation
+                    longues et complexes. Le modèle est open source, sous licence MIT modifiée.
+                </p>
+            </div>
+
+            <!-- Article 16 -->
+            <div class="article-card">
+                <div class="article-date">14 juin 2026</div>
+                <h3>Reve 2, Bernini, modèles IA plus légers et Majorana 2</h3>
+                <div><span class="tag">IA</span><span class="tag">Génération d'images</span><span class="tag">Quantique</span></div>
+                <div class="article-source">Source : YouTube</div>
+                <p>
+                    Reve 2 est un nouveau modèle de génération d'image, entraîné avec 10 fois moins de GPU que
+                    ses concurrents ; pour l'instant, le meilleur générateur d'image reste GPT-Image-2
+                    d'OpenAI. Bernini, publié début juin par le géant chinois Byton, est un système d'IA open
+                    source (licence Apache 2.0, basé sur WAN 2.2) pour la génération et l'édition vidéo, qui
+                    serait le meilleur générateur vidéo open source actuellement. De plus en plus de modèles
+                    IA sont compatibles avec des configurations plus petites, certains fonctionnant sur un PC
+                    portable avec 16 Go de RAM. Microsoft a par ailleurs présenté Majorana 2, une puce de
+                    calcul quantique, et annonce un ordinateur quantique pour 2029 au lieu de 2031.
+                </p>
+                <a href="https://www.youtube.com/watch?v=-Hx_nmTEwTA&t=122s" class="article-link" target="_blank">Voir la vidéo</a>
+            </div>
+
+            <!-- Article 17 -->
+            <div class="article-card">
+                <div class="article-date">12 juin 2026</div>
+                <h3>Suspension de l'accès à Fable 5 et Mythos 5 pour les pays étrangers</h3>
+                <div><span class="tag">IA</span><span class="tag">Anthropic</span><span class="tag">Réglementation</span></div>
+                <div class="article-source">Source : Anthropic</div>
+                <p>
+                    Le gouvernement des États-Unis explique que, pour la sécurité nationale du pays, l'accès
+                    aux modèles Fable 5 et Mythos 5 est suspendu pour les pays étrangers. Claude Fable 5 est le
+                    modèle d'Anthropic le plus avancé, faisant partie de la famille Mythos, rendue accessible
+                    au public et pas seulement à des organisations ciblées. Les autres modèles continuent de
+                    fonctionner normalement, mais plus Fable 5.
+                </p>
+                <a href="https://www.anthropic.com/news/fable-mythos-access" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 18 -->
+            <div class="article-card">
+                <div class="article-date">10 juin 2026</div>
+                <h3>Cette machine de 180 tonnes fait tenir toute l'IA mondiale</h3>
+                <div><span class="tag">IA</span><span class="tag">Matériel</span><span class="tag">Infrastructure</span></div>
+                <div class="article-source">Source : « Cette machine de 180 tonnes fait tenir toute l'IA mondiale »</div>
+                <p>
+                    Aucune note supplémentaire n'a été prise pour cette source.
+                </p>
+            </div>
+
+            <!-- Article 19 -->
+            <div class="article-card">
+                <div class="article-date">09 juin 2026</div>
+                <h3>Lancement de Claude Fable 5 et de la classe Mythos</h3>
+                <div><span class="tag">IA</span><span class="tag">Anthropic</span><span class="tag">Modèle</span></div>
+                <div class="article-source">Source : Anthropic</div>
+                <p>
+                    Lancement des modèles Claude Fable 5 et de la classe Mythos. Fable 5 dépasserait la
+                    majorité des modèles de manière générale, avec des performances exceptionnelles en
+                    conception, test et maintenance de logiciels (software engineering). Il possède une
+                    connaissance du travail impressionnante, une vision importante, et serait performant en
+                    recherche scientifique et dans d'autres domaines. Le modèle Fable 5 permettrait à Claude
+                    de mener des tâches complexes et longues.
+                </p>
+                <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 20 -->
+            <div class="article-card">
+                <div class="article-date">09 juin 2026</div>
+                <h3>Le big bang de l'IA physique : Nvidia lance Cosmos 3</h3>
+                <div><span class="tag">IA</span><span class="tag">Nvidia</span><span class="tag">Robotique</span></div>
+                <div class="article-source">Source : « Le big bang de l'IA physique a commencé (cette semaine) »</div>
+                <p>
+                    Le 1er juin 2026, le PDG de Nvidia, sur scène au GTC de Taipei, explique que Nvidia lance
+                    Cosmos 3, un modèle IA foundation open source spécialisé en physique, capable de simuler
+                    et prédire ce qui va se passer quand un objet ou un robot se déplace. Le modèle Cosmos 3
+                    est capable d'analyser une scène dans une vidéo, de générer des environnements 3D, et de
+                    prédire des actions physiques. Il a été entraîné sur 20 milliards de tokens multimodaux.
+                    Il existe deux versions en accès libre : une version Nano (8 milliards de paramètres) et
+                    une version Super (32 milliards de paramètres).
+                </p>
+            </div>
+
+            <!-- Article 21 -->
+            <div class="article-card">
+                <div class="article-date">04 juin 2026</div>
+                <h3>Dreaming: Better memory for a more helpful ChatGPT</h3>
+                <div><span class="tag">IA</span><span class="tag">OpenAI</span><span class="tag">Mémoire</span></div>
+                <div class="article-source">Source : OpenAI</div>
+                <p>
+                    Aucune note supplémentaire n'a été prise pour cette source.
+                </p>
+            </div>
+
+            </div><!-- fin onglet IA -->
+
+            <!-- ===== ONGLET 3 : Vulnérabilité ===== -->
+            <div class="tab-pane fade" id="tab-vulnerabilite" role="tabpanel">
+
+            <!-- Article 1 -->
+            <div class="article-card">
+                <div class="article-date">26 juin 2026</div>
+                <h3>Multiples vulnérabilités dans le noyau Linux Red Hat</h3>
+                <div><span class="tag">Vulnérabilités</span><span class="tag">Linux</span><span class="tag">Red Hat</span></div>
+                <div class="article-source">Source : CERT-FR</div>
+                <p>
+                    Cet avis du CERT-FR signale un risque d'atteinte à l'intégrité et à la confidentialité des
+                    données, un risque de contournement de la politique de sécurité, un risque de déni de
+                    service à distance, un risque d'exécution de code à distance, ainsi qu'un risque
+                    d'élévation de privilèges.
+                </p>
+                <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0808/" class="article-link" target="_blank">Lire l'avis complet</a>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="article-card">
+                <div class="article-date">26 juin 2026</div>
+                <h3>Vulnérabilité dans le noyau Linux Ubuntu</h3>
+                <div><span class="tag">Vulnérabilités</span><span class="tag">Linux</span><span class="tag">Ubuntu</span></div>
+                <div class="article-source">Source : CERT-FR</div>
+                <p>
+                    Cet avis du CERT-FR signale un risque d'atteinte à la confidentialité, un risque de
+                    contournement de la politique de sécurité, un risque d'attaque par déni de service, ainsi
+                    qu'un risque de contournement permettant d'obtenir des privilèges élevés sur le noyau
+                    Linux. Systèmes affectés : Ubuntu 20.04 ESM, Ubuntu 22.04 LTS et Ubuntu 26.04 LTS.
+                </p>
+                <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0806/" class="article-link" target="_blank">Lire l'avis complet</a>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="article-card">
+                <div class="article-date">25 juin 2026</div>
+                <h3>SquidBleed, une fuite mémoire passée inaperçue pendant 30 ans</h3>
+                <div><span class="tag">Vulnérabilités</span><span class="tag">Proxy</span><span class="tag">CVE</span></div>
+                <div class="article-source">Source : Korben.info</div>
+                <p>
+                    Une fuite mémoire a été découverte dans Squid, un serveur proxy open source utilisé par
+                    les entreprises et les fournisseurs d'accès. Cette faille, baptisée SquidBleed
+                    (CVE-2026-47729), permet aux attaquants autorisés sur le proxy de récupérer les requêtes
+                    HTTP en clair, et donc de récupérer des mots de passe, des clés API et des cookies. Selon
+                    l'article, la faille serait présente depuis 1997.
+                </p>
+                <a href="https://korben.info/squidbleed-une-fuite-memoire-passee-inapercue-pendant-30-ans.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="article-card">
+                <div class="article-date">25 juin 2026</div>
+                <h3>Multiples vulnérabilités dans Microsoft Azure Linux</h3>
+                <div><span class="tag">Vulnérabilités</span><span class="tag">Azure</span><span class="tag">Cloud</span></div>
+                <div class="article-source">Source : CERT-FR</div>
+                <p>
+                    Pas de détail supplémentaire noté.
+                </p>
+                <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0802/" class="article-link" target="_blank">Lire l'avis complet</a>
+            </div>
+
+            <!-- Article 5 -->
+            <div class="article-card">
+                <div class="article-date">15 juin 2026</div>
+                <h3>Multiples vulnérabilités dans Microsoft Azure</h3>
+                <div><span class="tag">Vulnérabilités</span><span class="tag">Azure</span><span class="tag">Cloud</span></div>
+                <div class="article-source">Source : CERT-FR</div>
+                <p>
+                    Plusieurs vulnérabilités ont été découvertes sur le service de cloud computing Microsoft
+                    Azure. Elles permettent à un attaquant de provoquer un problème de sécurité non spécifié
+                    par l'éditeur.
+                </p>
+                <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0753/" class="article-link" target="_blank">Lire l'avis complet</a>
+            </div>
+
+            <!-- Article 6 -->
+            <div class="article-card">
+                <div class="article-date">09 juin 2026</div>
+                <h3>Vulnérabilités dans Apache HTTP Server</h3>
+                <div><span class="tag">Vulnérabilités</span><span class="tag">Apache</span><span class="tag">Serveur</span></div>
+                <div class="article-source">Source : CERT-FR</div>
+                <p>
+                    Pas de détail supplémentaire noté.
+                </p>
+                <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0710/" class="article-link" target="_blank">Lire l'avis complet</a>
+            </div>
+
+            </div><!-- fin onglet Vulnérabilité -->
+
+            <!-- ===== ONGLET 4 : Veille générale sur IT ===== -->
+            <div class="tab-pane fade" id="tab-generale" role="tabpanel">
+
+            <!-- Article 1 -->
+            <div class="article-card">
+                <div class="article-date">28 juin 2026</div>
+                <h3>Interview ANSSI - chiffrement et souveraineté des données cloud</h3>
+                <div><span class="tag">Souveraineté numérique</span><span class="tag">Chiffrement</span><span class="tag">Cloud</span></div>
+                <div class="article-source">Source : Clubic</div>
+                <p>
+                    L'article explique que le chiffrement ne protège pas les données stockées dans le cloud
+                    d'un accès coupé à distance via un service kill switch : il rend les données illisibles,
+                    mais si l'on possède les clés ou que le cloud doit obéir à une injonction, la protection
+                    tombe malgré le chiffrement. La France reste dépendante des technologies et fournisseurs
+                    étrangers, ce qui fait peser un grand risque sur la disponibilité et la souveraineté des
+                    données publiques et sensibles. L'ANSSI propose un renforcement du cloud de confiance, des
+                    mesures de prévention comme la MFA, la lutte contre l'obsolescence, et un calendrier
+                    planifié pour migrer vers la cryptographie post-quantique — un chiffrement qui permet de
+                    résister à une attaque d'ordinateur quantique.
+                </p>
+                <a href="https://www.clubic.com/dossier-618682-interview-anssi.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="article-card">
+                <div class="article-date">09 juin 2026</div>
+                <h3>eMule en 2026</h3>
+                <div><span class="tag">P2P</span><span class="tag">Open Source</span><span class="tag">Piratage</span></div>
+                <div class="article-source">Source : CommentCaMarche</div>
+                <p>
+                    eMule, programme utilisé depuis le début des années 2000 principalement pour le piratage
+                    de contenus numériques, utilise la technologie peer-to-peer (P2P), comme pour le torrent.
+                    Ce programme open source permet de télécharger gratuitement et de manière anonyme des
+                    fichiers de toutes sortes. En 2026, un nouveau projet est sorti, la version 3.0.0, avec un
+                    débit de téléchargement amélioré. La montée de la réutilisation de l'outil viendrait du
+                    fait que les gens ne veulent plus payer les plateformes payantes pour accéder à un
+                    catalogue de séries.
+                </p>
+                <a href="https://www.commentcamarche.net/applis-sites/applications/38155-emule-2026/" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="article-card">
+                <div class="article-date">09 juin 2026</div>
+                <h3>NextCloud donne le coup d'envoi d'Euro-Office, et ça fait grincer quelques dents</h3>
+                <div><span class="tag">Souveraineté numérique</span><span class="tag">Bureautique</span><span class="tag">Open Source</span></div>
+                <div class="article-source">Source : Clubic</div>
+                <p>
+                    Euro-Office, la suite documentaire, lance la version 1.0 de Nextcloud Hub en rejoignant
+                    Collabora. Il y aura un changement majeur dans la manière de traiter les données
+                    personnelles : Euro-Office va traiter les documents côté client, et Collabora côté
+                    serveur, ce qui devrait améliorer l'expérience en la rendant plus réactive.
+                </p>
+                <a href="https://www.clubic.com/actualite-616027-lancement-euro-office.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            </div><!-- fin onglet Veille générale sur IT -->
             <div class="tab-pane fade show active" id="tab-cejma" role="tabpanel">
 
             <!-- ===== ONGLET 3 : CEJMA ===== -->
