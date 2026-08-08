@@ -180,6 +180,15 @@
             color: var(--accent);
             overflow: hidden;
         }
+        
+        .profile-photo .img-zoom {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Empêche l'image de se déformer */
+            /* MODIFIEZ CES DEUX LIGNES POUR AJUSTER VOTRE VISAGE */
+            transform: scale(1.6); /* Augmentez ce chiffre pour zoomer plus fort (ex: 1.8) */
+            object-position: center 20%; /* Ajustez le % du deuxième paramètre si votre tête est trop haute ou trop basse */
+        }
 
         .profile-photo img {
             width: 100%;
@@ -300,7 +309,7 @@
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <div class="profile-photo">
-                                <img src="/images/profil.jpg" alt="Photo de profil">
+                                <img src="/images/profil.jpg" alt="Photo de profil" class="img-zoom">
                             </div>
                         </div>
 
