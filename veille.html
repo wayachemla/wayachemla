@@ -179,6 +179,94 @@
             <div class="tab-pane fade show active" id="tab-reseau" role="tabpanel">
 
                 <div class="article-card">
+                <div class="article-date">07 août 2026</div>
+                <h3>Nmap : Scanner un réseau isolé via un tunnel SSH</h3>
+                <div><span class="tag">Nmap</span><span class="tag">SSH</span><span class="tag">Proxychains</span></div>
+                <div class="article-source">Source : IT-Connect</div>
+                <p>
+                    L’article présente une méthode permettant d’utiliser Nmap pour scanner un réseau non directement accessible en passant par une machine de rebond. La méthode repose sur SSH, Proxychains et Nmap. Un tunnel SSH dynamique crée un proxy SOCKS local sur le port 1080, Proxychains redirige les connexions vers ce proxy et Nmap réalise le scan. L’article recommande notamment un scan TCP Connect avec les options sT et Pn. La méthode présente toutefois des limites pour certains scans, notamment UDP, ICMP et ceux utilisant des paquets bruts, ainsi qu’une latence supplémentaire et des résultats pouvant différer d’un scan direct.
+                </p>
+                <a href="https://www.it-connect.fr/nmap-scan-reseau-isole-tunnel-ssh-proxychains/" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-date">04 août 2026</div>
+                <h3>Pourquoi le vieux code de Windows 11 résiste encore à Microsoft</h3>
+                <div><span class="tag">Windows 11</span><span class="tag">Microsoft</span><span class="tag">Regedit</span></div>
+                <div class="article-source">Source : Clubic</div>
+                <p>
+                    Windows 11 conserve plusieurs composants issus d’anciennes générations de Windows, notamment le Panneau de configuration, certaines boîtes de dialogue et l’Éditeur du Registre. Microsoft doit préserver ces composants lorsqu’un pilote, un périphérique ou un logiciel professionnel en dépend. L’entreprise doit également proposer des équivalents modernes et effectuer de nombreux tests avant de supprimer une ancienne fonction. L’Explorateur de fichiers et les applications les plus utilisées font partie des priorités de modernisation, tandis qu’une modernisation de Regedit est également étudiée.
+                </p>
+                <a href="https://www.clubic.com/actualite-624022-pourquoi-le-vieux-code-de-windows-11-resiste-encore-a-microsoft.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-date">04 août 2026</div>
+                <h3>Gufw : gérer le pare-feu UFW sous Linux avec une interface graphique</h3>
+                <div><span class="tag">Gufw</span><span class="tag">UFW</span><span class="tag">Linux</span></div>
+                <div class="article-source">Source : IT-Connect</div>
+                <p>
+                    Gufw est une interface graphique permettant de configurer et gérer UFW, le pare-feu intégré à de nombreuses distributions Linux. Il permet notamment d’activer ou désactiver le pare-feu, de définir les règles de trafic entrant et sortant et de gérer les règles de filtrage. Les règles créées avec Gufw sont gérées par UFW et peuvent être consultées avec la commande sudo ufw status. L’outil nécessite un environnement graphique et l’article recommande l’utilisation d’UFW en ligne de commande sur les serveurs sans interface graphique.
+                </p>
+                <a href="https://www.it-connect.fr/gufw-interface-graphique-ufw-linux/" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-date">03 août 2026</div>
+                <h3>Qu’est-ce qu’un WAF ? Principes et mise en pratique</h3>
+                <div><span class="tag">WAF</span><span class="tag">ModSecurity</span><span class="tag">Docker</span></div>
+                <div class="article-source">Source : IT-Connect</div>
+                <p>
+                    Un WAF analyse le trafic HTTP/HTTPS entre les utilisateurs et une application web afin de détecter et bloquer les requêtes malveillantes. Il fonctionne au niveau de la couche 7 du modèle OSI et peut notamment protéger contre les injections SQL, les attaques XSS, les traversées de répertoires, les inclusions de fichiers et les injections de commandes. L’article présente notamment ModSecurity associé à l’OWASP Core Rule Set et une mise en pratique avec Docker. Le WAF constitue une protection complémentaire qui ne remplace ni le développement sécurisé, ni les correctifs, ni le pare-feu réseau.
+                </p>
+                <a href="https://www.it-connect.fr/waf-web-application-firewall-debutant/" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-date">28 juillet 2026</div>
+                <h3>Microsoft Tier Model : le retour en grâce du on-premises ?</h3>
+                <div><span class="tag">Active Directory</span><span class="tag">PowerShell</span><span class="tag">Tier Model</span></div>
+                <div class="article-source">Source : IT-Connect</div>
+                <p>
+                    Microsoft a publié en juillet 2026 un module PowerShell nommé Active Directory Tier Model destiné à mettre en œuvre une segmentation des privilèges dans Active Directory. Le modèle reprend une approche simplifiée avec trois niveaux : Tier 0 pour les identités, Tier 1 pour les serveurs et Tier 2 pour les utilisateurs et groupes. Le script crée notamment des unités d’organisation, des groupes, des ACL, des GPO et des comptes adaptés aux différents tiers. Le modèle comprend 146 GPO et nécessite notamment PowerShell 7+ et Pester 5.7.1. L’article souligne plusieurs limites concernant notamment les environnements anciens, l’intégration cloud, les prérequis et la documentation.
+                </p>
+                <a href="https://www.it-connect.fr/microsoft-tier-model-le-retour-en-grace-du-on-premises/" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-date">28 juillet 2026</div>
+                <h3>Microsoft a réussi à rendre Defender for Endpoint inopérant... sur Linux</h3>
+                <div><span class="tag">Defender for Endpoint</span><span class="tag">Linux</span><span class="tag">RHEL</span></div>
+                <div class="article-source">Source : Clubic</div>
+                <p>
+                    Microsoft a confirmé deux dysfonctionnements distincts de Defender for Endpoint sur Linux. Le premier concerne les versions 101.26042.0000 à 101.26042.0009 et peut laisser le service de protection désactivé après une mise à niveau ou une réinstallation suivie d’un redémarrage. Le second concerne RHEL 8 et 9 en mode FIPS, où la mise à jour 101.26042.x peut échouer à s’installer. L’article indique que des builds ultérieures sont mentionnées dans les notes de version pour corriger ces problèmes. La protection peut rester compromise après le redémarrage d’une machine concernée jusqu’à l’intervention de l’administrateur.
+                </p>
+                <a href="https://www.clubic.com/actualite-622948-microsoft-a-reussi-a-rendre-defender-for-endpoint-inoperant-sur-linux.html" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-date">27 juillet 2026</div>
+                <h3>Les principaux outils de modernisation de l’IT</h3>
+                <div><span class="tag">AWS Transform</span><span class="tag">Azure</span><span class="tag">OpenLegacy</span></div>
+                <div class="article-source">Source : LeMagIT</div>
+                <p>
+                    L’article compare six solutions de modernisation des systèmes informatiques historiques : AWS Transform, Google Cloud Migration Center, IBM Transformation Advisor, Kodesage, Microsoft Azure Accelerate et OpenLegacy. Ces outils permettent notamment de migrer des charges de travail, de moderniser du code ancien ou de transformer l’architecture d’applications historiques. Certaines solutions utilisent l’IA pour analyser ou transformer le code, générer de la documentation ou créer des API. Le choix dépend notamment des scénarios de migration, des environnements pris en charge, de la sécurité, de la conformité et du coût.
+                </p>
+                <a href="https://www.lemagit.fr/conseil/Les-principaux-outils-de-modernisation-de-lIT" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+            <div class="article-card">
+                <div class="article-date">26 juillet 2026</div>
+                <h3>Mes tests étaient verts, mon analyseur réseau était faux : 7 défauts que seules de vraies données ont montrés</h3>
+                <div><span class="tag">Analyse réseau</span><span class="tag">TCP</span><span class="tag">netem</span></div>
+                <div class="article-source">Source : RHNetwork</div>
+                <p>
+                    Une suite de tests automatisés réussis ne garantit pas qu’un outil réseau est correct. L’auteur a découvert sept défauts après avoir confronté son analyseur à du trafic produit par un véritable noyau Linux. Les problèmes concernaient notamment la détection des retransmissions TCP, TSO/GSO, les captures produites par pktmon sous Windows, l’analyse d’auditd sous Linux et l’interprétation des événements connect(). Le banc de test présentait également des défauts liés à netem et au calcul de la latence. L’article souligne l’importance d’utiliser des données indépendantes du code testé et de vérifier que le banc de test peut réellement observer les phénomènes recherchés.
+                </p>
+                <a href="https://rhnetwork.xyz/blog/tests-verts-outil-faux/" class="article-link" target="_blank">Lire l'article complet</a>
+            </div>
+
+                <div class="article-card">
                 <div class="article-date">25 juillet 2026</div>
                 <h3>Vous avez installé un VPN sur votre routeur ? À trop vouloir bien faire, vous risquez de ralentir votre connexion</h3>
                 <div><span class="tag">VPN</span><span class="tag">Routeur</span><span class="tag">Réseau</span></div>
